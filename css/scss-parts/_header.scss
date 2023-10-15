@@ -3,19 +3,30 @@ header {
     transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
     &:hover {
       margin-right: 1rem;
-      background-color: rgb(3 7 18);;
-      span {
-        background-color: white;
-      }
     }
   }
   #headerCta {
     transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
-    &:hover {
-      background-color: rgb(3 7 18);;
-      color: white;
-    }
   }
   #headerMenuBg {
+  }
+  #menu-header {
+    li {
+      margin: 1rem 0;
+      a {
+        transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        &:hover {
+          --tw-text-opacity: 1;
+          color: rgb(75 85 99 / var(--tw-text-opacity));
+          letter-spacing: 0.025em;
+        }
+      }
+    }
+    .current_page_item{
+      &::after{
+        content: '*';
+        color: red;
+      }
+    }
   }
 }

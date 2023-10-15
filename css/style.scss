@@ -20,6 +20,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+.display-none{
+    @apply hidden;
+}
 
 // Stile
 @import "/css/scss-parts/header";

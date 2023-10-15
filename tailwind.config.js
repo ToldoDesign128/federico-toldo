@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    './img/icon/*.svg',
     'header.php',
     'footer.php',
     'home.php',
@@ -19,6 +20,7 @@ module.exports = {
       }
     },
     plugins: [],
-  }
+  },
+  darkMode: 'class',
 }
 
