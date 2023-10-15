@@ -49,8 +49,14 @@
             <div class="w-full flex justify-between items-center">
                <a href="#" class="text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 hover:tracking-wide transition-all duration-300">Privacy Policy</a>
                <!-- Icona dark mode -->
-               <img class="sun cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_sun.svg'; ?>" alt="light_mod">
-               <img class="moon cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_moon.svg'; ?>" alt="dark_mod">
+               <div class="hidden dark:flex">
+                  <p class="text-gray-100 mr-2">Go light</p>
+                  <img class="sun cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_sun.svg'; ?>" alt="light_mod">
+               </div>
+               <div class="flex dark:hidden">
+                  <p class="mr-2">Go dark</p>
+                  <img class="moon cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_moon.svg'; ?>" alt="dark_mod">
+               </div>
             </div>
             <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full mt-12 aspect-video object-cover rounded']); ?>
          </div>

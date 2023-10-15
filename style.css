@@ -709,6 +709,15 @@ header #menu-header .current_page_item::after {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
+:is(.dark .dark\:block) {
+  display: block;
+}
+:is(.dark .dark\:flex) {
+  display: flex;
+}
+:is(.dark .dark\:hidden) {
+  display: none;
+}
 :is(.dark .dark\:border-gray-100) {
   --tw-border-opacity: 1;
   border-color: rgb(243 244 246 / var(--tw-border-opacity));
