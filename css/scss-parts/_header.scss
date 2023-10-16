@@ -3,12 +3,28 @@ header {
     transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
     &:hover {
       margin-right: 1rem;
+    }    
+  }
+  .is-active{
+    span{
+      transition: all 1s cubic-bezier(.215, .61, .355, 1);
+      transform: rotate(45deg) translate( 5px, 5px);
+      &:last-child{
+        transform: rotate(-45deg) translate( 5px, -4px);
+      }
     }
   }
   #headerCta {
     transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-  #headerMenuBg {
+  #menu{
+    opacity: 0;
+    transform: translateY(-120%);
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+    &.open{
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   #menu-header {
     li {
