@@ -34,16 +34,16 @@
       </div>
       <span id="headerMenuBg" class="flex h-px w-full bg-gray-300 dark:bg-gray-700 z-50"></span>
       <div id="menu" class="relative bg-gray-200 dark:bg-gray-800 py-16 px-4 z-30">
-         <div class="flex container w-full max-h-fit mx-auto">
+         <div class="flex md:flex-row flex-wrap container w-full max-h-fit mx-auto justify-between">
             <!-- Section info -->
-            <div class="w-4/12">
-               <div class="flex mb-12">
+            <div class="lg:w-4/12 w-full lg:my-0 my-12 lg:order-1 order-3">
+               <div class="flex justify-between mb-12">
                   <ul class="w-1/2">
                      <li class="my-2 text-gray-900 dark:text-gray-100">federicotoldo.com</li>
                      <li class="my-2 text-gray-900 dark:text-gray-100">P.IVA 123456789</li>
                      <li class="my-2 text-gray-900 dark:text-gray-100">©2023 Federico Toldo</li>
                   </ul>
-                  <ul class="w-1/2">
+                  <ul class="lg:w-1/2 w-5/12">
                      <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 hover:text-gray-600 dark:hover:text-gray-300 hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">
                            <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="">
                            <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="">
@@ -73,10 +73,10 @@
                      <img class="moon cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_moon.svg'; ?>" alt="dark_mod">
                   </div>
                </div>
-               <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full mt-12 aspect-video object-cover rounded']); ?>
+               <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'lg:block hidden w-full mt-12 aspect-video object-cover rounded']); ?>
             </div>
             <!-- Section page -->
-            <div class="w-4/12 ml-[8.333333%]">
+            <div class="lg:w-4/12 md:w-6/12 w-full lg:ml-[8.333333%] lg:order-2 order-1">
                <nav class="">
                   <?php
                   wp_nav_menu(array(
@@ -88,7 +88,7 @@
                </nav>
             </div>
             <!-- Section stiky post -->
-            <div class="w-3/12">
+            <div class="lg:w-3/12 md:w-5/12 w-full lg:order-3 order-2">
                <?php
                $loop = new WP_Query(array(
                   'post_type'         => 'progetti',
