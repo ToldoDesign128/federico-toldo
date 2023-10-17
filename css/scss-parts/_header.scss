@@ -3,27 +3,38 @@ header {
     transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
     &:hover {
       margin-right: 1rem;
-    }    
+    }
   }
-  .is-active{
-    span{
-      transition: all 1s cubic-bezier(.215, .61, .355, 1);
-      transform: rotate(45deg) translate( 5px, 5px);
-      &:last-child{
-        transform: rotate(-45deg) translate( 5px, -4px);
+  .is-active {
+    span {
+      transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: rotate(45deg) translate(5px, 5px);
+      &:last-child {
+        transform: rotate(-45deg) translate(5px, -4px);
       }
     }
   }
   #headerCta {
     transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-  #menu{
-    opacity: 0;
+  #menu {
     transform: translateY(-120%);
-    transition: all 1s cubic-bezier(.215, .61, .355, 1);
-    &.open{
-      opacity: 1;
+    visibility: hidden;
+    opacity: 0;
+    padding: 0;
+    height: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    &.open {
       transform: translateY(0);
+      visibility: visible;
+      padding: 2rem 0;
+      height: 100%;
+      opacity: 1;
+
+      @media (min-width: 768px) {
+        padding-top: 4rem /* 64px */;
+        padding-bottom: 4rem /* 64px */;
+      }
     }
   }
   #menu-header {
@@ -38,9 +49,9 @@ header {
         }
       }
     }
-    .current_page_item{
-      &::after{
-        content: '*';
+    .current_page_item {
+      &::after {
+        content: "*";
         color: red;
       }
     }
