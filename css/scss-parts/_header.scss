@@ -23,7 +23,7 @@ header {
     opacity: 0;
     padding: 0;
     height: 0;
-    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1);
     &.open {
       transform: translateY(0);
       visibility: visible;
@@ -41,7 +41,7 @@ header {
     li {
       margin: 1rem 0;
       a {
-        transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: all .4s cubic-bezier(0.215, 0.61, 0.355, 1);
         &:hover {
           --tw-text-opacity: 1;
           color: rgb(75 85 99 / var(--tw-text-opacity));
@@ -52,7 +52,7 @@ header {
     .current_page_item {
       &::after {
         content: "*";
-        color: red;
+        color: #ff0000;
       }
     }
   }

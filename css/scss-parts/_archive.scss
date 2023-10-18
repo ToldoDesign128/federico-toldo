@@ -1,0 +1,19 @@
+.archive-progetti {
+  .current-filter-chip {
+    color: rgb(17 24 39);
+    opacity: 0.6;
+    background-color: rgb(243 244 246);
+    pointer-events: none;
+  }
+}
+
+.dark {
+  .archive-progetti {
+    .current-filter-chip {
+      color: rgb(17 24 39);
+      opacity: 0.6;
+      background-color: rgb(243 244 246);
+      pointer-events: none;
+    }
+  }
+}

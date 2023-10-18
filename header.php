@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html class="scroll-smooth" <?php language_attributes(); ?>>
 
 <head>
    <meta charset="<?php bloginfo('charset'); ?>">
@@ -13,9 +13,9 @@
 </head>
 
 <body <?php body_class("bg-gray-100 dark:bg-gray-900"); ?>>
-   <header class="w-full fixed">
+   <header class="w-full fixed z-50">
       <div class="relative bg-gray-200 dark:bg-gray-800 z-40">
-         <div class="flex container mx-auto py-5 px-4 justify-between items-center">
+         <div class="flex container mx-auto py-5 px-6 justify-between items-center">
             <div class="lg:w-40 w-auto flex items-center">
                <button id="hamburgerButton" class="group py-4 px-[.5rem] mr-2 bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border border-gray-900 dark:border-gray-100 rounded-full">
                   <span class="flex h-px w-8 bg-gray-900 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
@@ -33,8 +33,8 @@
          </div>
       </div>
       <span id="headerMenuBg" class="flex h-px w-full bg-gray-300 dark:bg-gray-700 z-50"></span>
-      <div id="menu" class="bg-gray-200 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-900 md:py-16 py-8 z-30">
-         <div class="flex md:flex-row flex-wrap container w-full max-h-fit mx-auto px-4 justify-between">
+      <div id="menu" class="bg-gray-200 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-700 md:py-16 py-8 z-30">
+         <div class="flex md:flex-row flex-wrap container w-full max-h-fit mx-auto px-6 justify-between">
             <!-- Section info -->
             <div class="lg:w-4/12 w-full lg:my-0 md:my-12 my-6 lg:order-1 order-3">
                <div class="md:flex hidden justify-between mb-12">
@@ -73,7 +73,12 @@
                      <img class="moon cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_moon.svg'; ?>" alt="dark_mod">
                   </div>
                </div>
-               <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'lg:block hidden w-full mt-12 aspect-video object-cover rounded']); ?>
+               <?php
+               if (has_post_thumbnail()) {
+                  echo get_the_post_thumbnail(null, 'large', ['class' => 'lg:block hidden w-full mt-12 aspect-video object-cover rounded']);;
+               } else {
+                  echo '<img class="lg:block hidden w-full mt-12 aspect-video object-cover rounded" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
+               }; ?>
             </div>
             <!-- Section page -->
             <div class="lg:w-4/12 md:w-6/12 w-full lg:ml-[8.333333%] lg:order-2 order-1">

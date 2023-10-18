@@ -8,7 +8,10 @@ module.exports = {
     'front-page.php',
     'index.php',
     'page.php',
+    'archive.php',
+    'archive-progetti.php',
     'single.php',
+    'single-progetti.php',
     '404.php'
   ],
   theme: {
