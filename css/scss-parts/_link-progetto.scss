@@ -1,0 +1,46 @@
+.circle-button {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999999;
+  transition: all .6s cubic-bezier(.215, .61, .355, 1);
+  
+  @media (min-width: 1024px) {  
+      &:hover{
+        background-color: black;
+      }
+  }
+}
+
+.main_circle_text {
+  position: absolute;
+  font-size: 16px;
+  animation: animete_circle_txt 10s linear infinite;
+
+  svg{
+    fill: red;
+  }
+}
+
+@keyframes animete_circle_txt {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.dark{
+    .circle-button{
+        @media (min-width: 1024px) {  
+            &:hover{
+              background-color: white;
+            }
+        }
+    }
+}

@@ -5,17 +5,17 @@ while (have_posts()) : the_post();
         <!-- Hero progetti -->
         <section class="w-full pt-48">
             <div class="w-full h-full container mx-auto flex flex-col justify-center px-6">
-                <h1 class="w-7/12 lg:text-8xl text-gray-900 dark:text-gray-100">
+                <h1 class="lg:w-7/12 md:w-8/12 w-full lg:text-8xl md:text-7xl text-4xl text-gray-900 dark:text-gray-100">
                     <?php echo get_the_title(); ?>
                 </h1>
                 <div class="flex md:flex-row flex-col py-12">
-                    <div class="w-3/12">
+                    <div class="lg:w-3/12 md:w-4/12 w-full">
                         <p class="text-sm text-gray-500 uppercase py-4  border-b border-gray-300 dark:border-gray-700">
                             Ruolo
                         </p>
-                        <p class="text-xl text-gray-800 dark:text-gray-200 py-4"><?php echo esc_html(get_field('ruolo_hero_progetti')); ?></p>
+                        <p class="lg:text-xl text-lg text-gray-800 dark:text-gray-200 py-4"><?php echo esc_html(get_field('ruolo_hero_progetti')); ?></p>
                     </div>
-                    <div class="w-3/12">
+                    <div class="lg:w-3/12 md:w-4/12 w-full">
                         <p class="text-sm text-gray-500 uppercase py-4  border-b border-gray-300 dark:border-gray-700">
                             Crediti
                         </p>
@@ -26,22 +26,69 @@ while (have_posts()) : the_post();
                             $crediti_link_title = $crediti_link['title'];
                             $crediti_link_target = $crediti_link['target'] ? $crediti_link['target'] : '_self';
                         ?>
-                            <a class="group flex text-xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 py-4 ml-0 lg:hover:ml-2 transition-all" href="<?php echo esc_url($crediti_link_url); ?>" target="<?php echo esc_attr($crediti_link_target); ?>"><?php echo esc_html($crediti_link_title); ?><img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
+                            <a class="group flex lg:text-xl text-lg text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 py-4 ml-0 lg:hover:ml-2 transition-all" href="<?php echo esc_url($crediti_link_url); ?>" target="<?php echo esc_attr($crediti_link_target); ?>"><?php echo esc_html($crediti_link_title); ?><img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
                         <?php endif; ?>
                     </div>
-                    <div class="w-3/12">
+                    <div class="lg:w-3/12 md:w-4/12 w-full">
                         <p class="text-sm text-gray-500 uppercase py-4  border-b border-gray-300 dark:border-gray-700">
                             Anno
                         </p>
-                        <p class="text-xl text-gray-800 dark:text-gray-200 py-4"><?php echo esc_html(get_field('anno_hero_progetti')); ?></p>
+                        <p class="lg:text-xl text-lg text-gray-800 dark:text-gray-200 py-4"><?php echo esc_html(get_field('anno_hero_progetti')); ?></p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Content progetto -->
-        <section class="w-full container mx-auto flex flex-col justify-center px-6">
-
+        <section class="container mx-auto ">
+            <div class="lg:w-9/12 w-full flex flex-col px-6">
+                <?php if (has_post_thumbnail()) {
+                    echo get_the_post_thumbnail(null, 'full', ['class' => 'w-full lg:my-14 md:my-12 my-6 aspect-video object-cover rounded']);;
+                } else {
+                    echo '<img class="w-full lg:my-14 md:my-12 my-6 aspect-video object-cover rounded" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
+                }; ?>
+                <!-- Testo Img -->
+                <div class="lg:my-14 md:my-12 my-6">
+                    <div class="flex flex-row flex-wrap justify-between">
+                        <div class="lg:w-6/12 w-full text-gray-900 dark:text-gray-100">
+                            <?php echo get_the_content(); ?>
+                        </div>
+                        <?php if (get_field('immagine_1_progetti')) : ?>
+                            <img class="lg:w-5/12 w-full aspect-video lg:mt-0 md:mt-24 mt-12 object-cover rounded" src="<?php the_field('immagine_1_progetti'); ?>" />
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="lg:my-14 my-6">
+                    <?php if (get_field('immagine_2_progetti')) : ?>
+                        <img class="w-full aspect-video object-cover rounded" src="<?php the_field('immagine_2_progetti'); ?>" />
+                    <?php endif; ?>
+                </div>
+            </div>
         </section>
+        <!-- Link Website Button -->
+        <?php
+        $progetti_link = get_field('link_progetto');
+        if ($progetti_link) :
+            $progetti_link_url = $progetti_link['url'];
+            $progetti_link_target = $progetti_link['target'] ? $progetti_link['target'] : '_self';
+        ?>
+            <a class="circle-button" href="<?php echo esc_url($progetti_link_url); ?>" target="<?php echo esc_attr($progetti_link_target); ?>">
+                <div class="main_circle_text text-gray-900 dark:text-gray-100">
+                    <svg viewBox="0 0 100 100" style="border-radius: 50%; " width="130" height="130">
+                        <defs>
+                            <path id="circle" d="
+                        M 50, 50
+                        m -37, 0
+                        a 37,37 0 1,1 74,0
+                        a 37,37 0 1,1 -74,0" />
+                        </defs>
+                        <text>
+                            <textPath xlink:href="#circle">VISITA IL SITO • VISITA IL SITO • </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <div class="circle-text"><img src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt=""></div>
+            </a>
+        <?php endif; ?>
     </main>
 <?php endwhile;
 get_footer(); ?>

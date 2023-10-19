@@ -37,7 +37,7 @@ function federicotoldo_custom_progetti()
             'hierarchycal'          =>          false,
             'taxonomies'            =>          array(''),
             'show_in_rest'          =>          false, //gutemberg disattivato
-            'supports'              =>          array('title','thumbnail') //campi supportati
+            'supports'              =>          array('title','thumbnail','editor') //campi supportati
         ),
         flush_rewrite_rules() /*fine delle opzioni*/
     );

@@ -1,4 +1,4 @@
-<footer class="w-full bg-gray-200 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-900 md:py-16 py-8 z-10">
+<footer class="w-full bg-gray-200 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-900 mt-6 md:py-16 py-8 z-10">
     <section class="flex md:flex-row flex-wrap container w-full max-h-fit mx-auto px-6 justify-between">
         <!-- Section contatti -->
         <div class="lg:w-4/12 w-full lg:my-0 my-6">
