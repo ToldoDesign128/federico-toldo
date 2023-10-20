@@ -1,7 +1,7 @@
 <?php get_header();
 while (have_posts()) : the_post();
 ?>
-    <main>
+    <main id="singleContainer">
         <!-- Hero progetti -->
         <section class="w-full pt-48">
             <div class="w-full h-full container mx-auto flex flex-col justify-center px-6">
@@ -71,7 +71,7 @@ while (have_posts()) : the_post();
             $progetti_link_url = $progetti_link['url'];
             $progetti_link_target = $progetti_link['target'] ? $progetti_link['target'] : '_self';
         ?>
-            <a class="circle-button" href="<?php echo esc_url($progetti_link_url); ?>" target="<?php echo esc_attr($progetti_link_target); ?>">
+            <a class="circle-button z-0" href="<?php echo esc_url($progetti_link_url); ?>" target="<?php echo esc_attr($progetti_link_target); ?>">
                 <div class="main_circle_text text-gray-900 dark:text-gray-100">
                     <svg viewBox="0 0 100 100" style="border-radius: 50%; " width="130" height="130">
                         <defs>
@@ -90,5 +90,19 @@ while (have_posts()) : the_post();
             </a>
         <?php endif; ?>
     </main>
+    <script>
+        jQuery(window).scroll(function() {
+            var heightScrolled = jQuery(window).scrollTop();
+            var defaultHeight = 1500;
+
+            if (heightScrolled < defaultHeight) {
+                jQuery('.circle-button').removeClass("returTop")
+                jQuery('.circle-button').addClass("a")
+            } else {
+                jQuery('.circle-button').addClass("returTop")
+            }
+
+        });
+    </script>
 <?php endwhile;
 get_footer(); ?>

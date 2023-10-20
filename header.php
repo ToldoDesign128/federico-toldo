@@ -27,7 +27,7 @@
             <a href="<?php echo home_url(); ?>" class="w-auto font-semibold text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">
                Federico Toldo
             </a>
-            <a id="headerCta" href="<?php echo get_page_link(get_page_by_title('contatti')->ID); ?>" class="lg:flex hidden w-auto text-gray-900 lg:hover:text-gray-100 dark:text-gray-100 dark:lg:hover:text-gray-900 border bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border-gray-900 dark:border-gray-100 rounded py-2 px-5">
+            <a id="headerCta" href="<?php echo get_permalink( get_page_by_path( 'contatti' ) );; ?>" class="lg:flex hidden w-auto text-gray-900 lg:hover:text-gray-100 dark:text-gray-100 dark:lg:hover:text-gray-900 border bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border-gray-900 dark:border-gray-100 rounded py-2 px-5">
                Contattami
             </a>
          </div>
@@ -89,7 +89,8 @@
                      'container'         =>  false,
                      'menu_class'        => 'lg:text-6xl md:text-5xl text-4xl text-gray-900 dark:text-gray-100',
                      'orderby'           => 'menu_order'
-                  )); ?>
+                  ));
+                  ?>
                </nav>
             </div>
             <!-- Section stiky post -->
@@ -110,7 +111,7 @@
                      <article class="w-full h-full relative rounded">
                         <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full h-full brightness-50 lg:hover:brightness-75 rounded transition-all duration-300']); ?>
                         <div class="absolute bottom-0 p-4 text-gray-100 text-4xl z-10">
-                           <p class="text-gray-100 text-4xl font-medium">Dai un occhiata al mio ultimo progetto</p>
+                           <p class="text-gray-100 text-4xl font-medium">Dai un'occhiata al mio ultimo progetto</p>
                            <p class="text-gray-300 text-xl">www.weatherwatersand.com</p> <!-- Da sostituire con il field del URL -->
                         </div>
                      </article>
