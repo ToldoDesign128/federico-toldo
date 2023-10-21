@@ -27,7 +27,7 @@
             <a href="<?php echo home_url(); ?>" class="w-auto font-semibold text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">
                Federico Toldo
             </a>
-            <a id="headerCta" href="<?php echo get_permalink( get_page_by_path( 'contatti' ) );; ?>" class="lg:flex hidden w-auto text-gray-900 lg:hover:text-gray-100 dark:text-gray-100 dark:lg:hover:text-gray-900 border bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border-gray-900 dark:border-gray-100 rounded py-2 px-5">
+            <a id="headerCta" href="<?php echo get_permalink(get_page_by_path('contatti'));; ?>" class="lg:flex hidden w-auto text-gray-900 lg:hover:text-gray-100 dark:text-gray-100 dark:lg:hover:text-gray-900 border bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border-gray-900 dark:border-gray-100 rounded py-2 px-5">
                Contattami
             </a>
          </div>
@@ -45,18 +45,18 @@
                   </ul>
                   <ul class="lg:w-1/2 w-5/12">
                      <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">
-                           <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="">
-                           <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="">
+                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
+                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
                            info@federicotoldo.com</a>
                      </li>
                      <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                           <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="">
-                           <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="">
+                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="Linkedin">
+                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="Linkedin-dark">
                            Linkedin</a>
                      </li>
                      <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                           <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="">
-                           <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="">
+                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="Github">
+                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="Github-dark">
                            GitHub</a>
                      </li>
                   </ul>
@@ -66,18 +66,18 @@
                   <!-- Icona dark mode -->
                   <div class="hidden dark:flex">
                      <p class="text-gray-100 mr-2">Go light</p>
-                     <img class="sun cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_sun.svg'; ?>" alt="light_mod">
+                     <img width="24px" height="24px" class="sun cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_sun.svg'; ?>" alt="light_mod">
                   </div>
                   <div class="flex dark:hidden">
                      <p class="mr-2">Go dark</p>
-                     <img class="moon cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_moon.svg'; ?>" alt="dark_mod">
+                     <img width="24px" height="24px" class="moon cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_moon.svg'; ?>" alt="dark_mod">
                   </div>
                </div>
                <?php
                if (has_post_thumbnail()) {
                   echo get_the_post_thumbnail(null, 'large', ['class' => 'lg:block hidden w-full mt-12 aspect-video object-cover rounded']);;
                } else {
-                  echo '<img class="lg:block hidden w-full mt-12 aspect-video object-cover rounded" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
+                  echo '<img class="lg:block hidden w-full mt-12 aspect-video object-cover rounded" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg" alt="img-placeholder"/>';
                }; ?>
             </div>
             <!-- Section page -->
@@ -123,3 +123,8 @@
          </div>
       </div>
    </header>
+   <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+   </div>

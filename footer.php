@@ -23,22 +23,22 @@
                 <ul class="lg:w-1/2 md:w-5/12 w-full md:ml-8">
                     <li class="my-2">
                         <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">
-                            <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="">
-                            <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="">
+                            <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
+                            <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
                             info@federicotoldo.com
                         </a>
                     </li>
                     <li class="my-2">
                         <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                            <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="">
-                            <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="">
+                            <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="Linkedin">
+                            <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="Linkedin-dark">
                             Linkedin
                         </a>
                     </li>
                     <li class="my-2">
                         <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                            <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="">
-                            <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="">
+                            <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="Github">
+                            <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="Github-dark">
                             GitHub
                         </a>
                     </li>
@@ -49,11 +49,11 @@
                 <!-- Icona dark mode -->
                 <div class="hidden dark:flex">
                     <p class="text-gray-100 mr-2">Go light</p>
-                    <img class="sun cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_sun.svg'; ?>" alt="light_mod">
+                    <img width="24px" height="24px" class="sun cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_sun.svg'; ?>" alt="light_mod">
                 </div>
                 <div class="flex dark:hidden">
                     <p class="mr-2">Go dark</p>
-                    <img class="moon cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_moon.svg'; ?>" alt="dark_mod">
+                    <img width="24px" height="24px" class="moon cursor-pointer" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_moon.svg'; ?>" alt="dark_mod">
                 </div>
             </div>
         </div>
@@ -61,4 +61,5 @@
 </footer>
 <?php wp_footer(); ?>
 </body>
+
 </html>
