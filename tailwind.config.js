@@ -13,6 +13,7 @@ module.exports = {
     'archive-progetti.php',
     'single.php',
     'single-progetti.php',
+    './template-parts/related-post.php',
     '404.php'
   ],
   theme: {

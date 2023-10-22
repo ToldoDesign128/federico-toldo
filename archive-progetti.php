@@ -45,7 +45,7 @@
                         <a class="text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100" href="<?php the_permalink(); ?>">
                             <?php
                             if (has_post_thumbnail()) {
-                                echo get_the_post_thumbnail(null, 'large', ['class' => 'lg:hidden block w-full aspect-video object-cover rounded md:mb-8 mb-4']);;
+                                echo get_the_post_thumbnail(null, 'large', ['class' => 'lg:hidden block w-full aspect-video object-cover rounded md:mb-8 mb-4']);
                             } else {
                                 echo '<img class="lg:hidden block w-full aspect-video object-cover rounded md:mb-4 mb-2" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
                             }; ?>
