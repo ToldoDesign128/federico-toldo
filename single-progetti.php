@@ -1,4 +1,7 @@
 <?php get_header();
+
+$page_id = get_queried_object_id();
+
 while (have_posts()) : the_post();
     $bread_current = get_the_title();
     $bread_archive_link = get_post_type_archive_link('progetti');
@@ -87,11 +90,38 @@ while (have_posts()) : the_post();
             </div>
         </section>
         <!-- Tecnologie applicate -->
-        <section class="container mx-auto">
+        <section class="container mx-auto py-6">
+            <h5 class="w-full font-medium lg:text-4xl md:text-3xl text-2xl text-gray-700 dark:text-gray-300 my-6 px-6">
+                Tecnologie utilizzate
+            </h5>
+            <div class="lg:w-9/12 flex flex-row flex-wrap w-full px-6">
+                <?php
+                // Check rows exists.
+                if (have_rows('tecnologie_utilizzate_progetti', $page_id)) :
+
+                    // Loop through rows.
+                    while (have_rows('tecnologie_utilizzate_progetti', $page_id)) : the_row();
+
+                        // Load sub field value.
+                        $sub_value = get_sub_field('link_tecnologie_progetto');
+                        if ($sub_value) :
+                            $sub_value_url = $sub_value['url'];
+                            $sub_value_title = $sub_value['title'];
+                            $sub_value_target = $sub_value['target'] ? $sub_value['target'] : '_self';
+                ?>
+                            <div class="md:w-6/12 w-full">
+                                <a class="flex lg:text-3xl md:text-2xl text-xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 my-4 transition-all" href="<?php echo esc_url($sub_value_url); ?>" target="<?php echo esc_attr($sub_value_target); ?>"><?php echo esc_html($sub_value_title); ?><img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
+                            </div>
+                <?php
+                        // End loop.
+                        endif;
+                    endwhile;
+                endif; ?>
+            </div>
 
         </section>
         <!-- Progetti Corelati -->
-        <section class="container mx-auto">
+        <section class="container mx-auto py-6">
             <?php get_template_part('template-parts/related-post'); ?>
         </section>
         <!-- Link Website Button -->

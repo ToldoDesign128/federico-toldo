@@ -1,45 +1,37 @@
-// Dark mode
-document.addEventListener("DOMContentLoaded", function () {
-    const sunIcon = document.querySelector(".sun");
-    const moonIcon = document.querySelector(".moon");
-
-    const userTheme = localStorage.getItem("theme");
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    const iconToggle = () => {
-        moonIcon.classList.toggle("display-none");
-        sunIcon.classList.toggle("display-none");
-    };
-    const themeCheck = () => {
-        if (userTheme === "dark" || (!userTheme && systemTheme)) {
-            document.documentElement.classList.add("dark");
-            moonIcon.classList.add("display-none");
-            return;
-        }
-        sunIcon.classList.add("display-none");
-    };
-
-    const themeSwitch = () => {
-        if (document.documentElement.classList.contains("dark")) {
-            document.documentElement.classList.remove("dark");
-            localStorage.setItem("theme", "light");
-            iconToggle();
-            return;
-        }
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-        iconToggle();
-    };
-
-    sunIcon.addEventListener("click", () => {
-        themeSwitch();
-    });
-    moonIcon.addEventListener("click", () => {
-        themeSwitch();
-    });
-
-    themeCheck();
-});
+// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  };
+  
+  function setDarkTheme() {
+    document.documentElement.classList.add("dark");
+    localStorage.theme = "dark";
+  };
+  
+  function setLightTheme() {
+    document.documentElement.classList.remove("dark");
+    localStorage.theme = "light";
+  };
+  
+  function onThemeSwitcherItemClick(event) {
+    const theme = event.target.dataset.theme;
+  
+    if (theme === "system") {
+      localStorage.removeItem("theme");
+      setSystemTheme();
+    } else if (theme === "dark") {
+      setDarkTheme();
+    } else {
+      setLightTheme();
+    }
+  };
+  
+  const themeSwitcherItems = document.querySelectorAll("#theme-switcher");
+  themeSwitcherItems.forEach((item) => {
+    item.addEventListener("click", onThemeSwitcherItemClick);
+  });
 //Hamburger menu
 jQuery("#hamburgerButton").click(function () {
     jQuery("#hamburgerButton").toggleClass("is-active");
