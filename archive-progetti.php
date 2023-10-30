@@ -3,7 +3,7 @@
     <!-- Hero progetti -->
     <section class="w-full pt-48">
         <div class="w-full h-full container mx-auto flex flex-col justify-center px-6">
-            <h1 class="lg:w-7/12 md:w-8/12 w-full lg:text-8xl md:text-7xl text-4xl text-gray-900 dark:text-gray-100">
+            <h1 class="lg:w-7/12 md:w-8/12 w-full lg:text-8xl md:text-7xl text-4xl text-gray-900 dark:text-gray-100" style="line-height: 1.2;">
                 Questi sono alcuni dei miei lavori
             </h1>
             <!--Filtro Progetti -->

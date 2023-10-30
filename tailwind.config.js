@@ -9,6 +9,7 @@ module.exports = {
     'index.php',
     'page.php',
     'page-contatti.php',
+    'page-about.php',
     'archive.php',
     'archive-progetti.php',
     'single.php',
