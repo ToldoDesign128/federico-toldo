@@ -40,7 +40,7 @@ $page_id = get_queried_object_id();
                 <!-- Sezione di cosa mi occupo -->
                 <div class="w-full lg:pt-0 pt-10">
                     <h3 class="lg:text-5xl text-4xl text-gray-800 dark:text-gray-200 py-6">Di cosa mi occupo</h3>
-                    <ul class="flex flex-row flex-wrap justify-between" data-scroll>
+                    <ul class="flex flex-row flex-wrap justify-between">
                         <?php
                         if (have_rows('servizi_repeater_about', $page_id)) :
 
