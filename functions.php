@@ -41,24 +41,25 @@ add_action('after_setup_theme', 'federicotoldo_setup');
  * @param  string $title Current archive title to be displayed.
  * @return string        Modified archive title to be displayed.
  */
-function federicotoldo_archive_title( $title ) {
-	if ( is_category() ) {
-		$title = single_cat_title( '', false );
-	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', false );
-	} elseif ( is_author() ) {
+function federicotoldo_archive_title($title)
+{
+	if (is_category()) {
+		$title = single_cat_title('', false);
+	} elseif (is_tag()) {
+		$title = single_tag_title('', false);
+	} elseif (is_author()) {
 		$title = '<span class="vcard">' . get_the_author() . '</span>';
-	} elseif ( is_post_type_archive() ) {
-		$title = post_type_archive_title( '', false );
-	} elseif ( is_tax() ) {
-		$title = single_term_title( '', false );
-	} elseif ( is_home() ) {
-		$title = single_post_title( '', false );
+	} elseif (is_post_type_archive()) {
+		$title = post_type_archive_title('', false);
+	} elseif (is_tax()) {
+		$title = single_term_title('', false);
+	} elseif (is_home()) {
+		$title = single_post_title('', false);
 	}
 
 	return $title;
 }
-add_filter( 'get_the_archive_title', 'federicotoldo_archive_title' );
+add_filter('get_the_archive_title', 'federicotoldo_archive_title');
 
 // Change footer in admin panel
 function remove_footer_admin()
@@ -103,19 +104,20 @@ add_action('init', function () {
 /*ADD ACF Option Page*/
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
-	   'page_title'    => 'Social',
-	   'menu_title'   => 'Social',
-	   'menu_slug'    => 'social-settings',
-	   'capability'   => 'edit_posts',
-	   'icon_url'      => 'dashicons-twitter',
-	   'redirect'      => true
+		'page_title'    => 'Social',
+		'menu_title'   => 'Social',
+		'menu_slug'    => 'social-settings',
+		'capability'   => 'edit_posts',
+		'icon_url'      => 'dashicons-twitter',
+		'redirect'      => true
 	));
- }
+}
 
 // Add style and script
 function add_theme_scripts()
 {
 	wp_enqueue_style('style', get_stylesheet_uri());
+	wp_enqueue_style('locomotive', get_template_directory_uri() . '/css/locomotive-scroll.min.css');
 
 	wp_enqueue_script('script', get_template_directory_uri() . '/js/script.min.js', array('jquery'), 1.1, true);
 }

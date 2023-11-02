@@ -40,7 +40,7 @@ $page_id = get_queried_object_id();
                 <!-- Sezione di cosa mi occupo -->
                 <div class="w-full lg:pt-0 pt-10">
                     <h3 class="lg:text-5xl text-4xl text-gray-800 dark:text-gray-200 py-6">Di cosa mi occupo</h3>
-                    <ul class="flex flex-row flex-wrap justify-between">
+                    <ul class="flex flex-row flex-wrap justify-between" data-scroll>
                         <?php
                         if (have_rows('servizi_repeater_about', $page_id)) :
 
@@ -96,17 +96,14 @@ $page_id = get_queried_object_id();
             <h5 class="md:w-6/12 w-full lg:text-5xl text-4xl text-gray-800 dark:text-gray-200"">
                 <?php echo esc_html(get_field('titolo_formazione_about', $page_id)); ?>
             </h5>
-            <div class="w-full lg:pl-[8.333%] py-8">
+            <div class=" w-full lg:pl-[8.333%] py-8">
                 <div class="w-full flex lg:flex-row flex-col gap-8">
                     <?php
                     if (have_rows('repeter_formazione_about', $page_id)) :
-
                         while (have_rows('repeter_formazione_about', $page_id)) : the_row();
-
                             $repeater_formazione_titolo = get_sub_field('scuola_repeter_formazione', $page_id);
                             $repeater_formazione_testo = get_sub_field('testo_formazione_repeter', $page_id);
                             $repeater_formazione_voto = get_sub_field('votazione_repeater_formazione', $page_id);
-
                     ?>
                             <div class="border-b border-gray-400 dark:border-gray-600">
                                 <p class="text-2xl text-gray-700 dark:text-gray-300 py-2"><?php echo $repeater_formazione_titolo; ?></p>
@@ -117,11 +114,11 @@ $page_id = get_queried_object_id();
                         endwhile;
                     endif;
                     ?>
+
                 </div>
-            </div>
+        </div>
         </div>
 
     </section>
-
 </main>
 <?php get_footer(); ?>

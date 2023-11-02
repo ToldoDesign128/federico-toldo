@@ -23,12 +23,12 @@ footer {
 #footerScrollText {
   div {
     p {
-      animation: animate 40s linear infinite;
-      animation-delay: -40s;
+      animation: animate 50s linear infinite;
+      animation-delay: -50s;
 
       &:nth-child(2) {
-        animation: animate2 40s linear infinite;
-        animation-delay: -20s;
+        animation: animate2 50s linear infinite;
+        animation-delay: -25s;
       }
     }
   }
