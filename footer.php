@@ -1,4 +1,13 @@
-<footer class="w-full bg-gray-200 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-900 mt-6 md:py-16 py-8 z-10">
+<section id="footerScrollText" class="relative w-full flex items-center h-32 overflow-hidden bg-gray-400 dark:bg-gray-600 mt-8">
+    <div class="scrollText w-full flex">
+        <p class="text-gray-200 text-6xl whitespace-nowrap uppercase"> Federico Toldo <span> • Web Design • </span> Federico Toldo <span> • Web Design • </span>Federico Toldo <span> • Web Design • </span> Federico Toldo <span> • Web Design • </span></p>
+        <p class="text-gray-200 text-6xl whitespace-nowrap uppercase"> Federico Toldo <span> • Web Design • </span> Federico Toldo <span> • Web Design • </span>Federico Toldo <span> • Web Design • </span> Federico Toldo <span> • Web Design • </span></p>
+        <p class="text-gray-200 text-6xl whitespace-nowrap uppercase"> Federico Toldo <span> • Web Design • </span> Federico Toldo <span> • Web Design • </span>Federico Toldo <span> • Web Design • </span> Federico Toldo <span> • Web Design • </span></p>
+    </div>
+
+</section>
+
+<footer class="w-full bg-gray-200 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-900 md:py-16 py-8 z-10">
     <section class="flex md:flex-row flex-wrap container w-full max-h-fit mx-auto px-6 justify-between">
         <!-- Section contatti -->
         <div class="lg:w-4/12 w-full lg:my-0 my-6">
