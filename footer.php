@@ -4,9 +4,7 @@
         <p class="text-gray-200 lg:text-6xl md:text-5xl text-3xl whitespace-nowrap uppercase"> Federico Toldo <span> • Design e Sviluppo Web • </span> Federico Toldo <span> • Design e Sviluppo Web • </span>Federico Toldo <span> • Design e Sviluppo Web • </span> Federico Toldo <span> • Design e Sviluppo Web • </span></p>
         <p class="text-gray-200 lg:text-6xl md:text-5xl text-3xl whitespace-nowrap uppercase"> Federico Toldo <span> • Design e Sviluppo Web • </span> Federico Toldo <span> • Design e Sviluppo Web • </span>Federico Toldo <span> • Design e Sviluppo Web • </span> Federico Toldo <span> • Design e Sviluppo Web • </span></p>
     </div>
-
 </section>
-
 
 <footer class="w-full bg-gray-200 dark:bg-gray-800 border-t border-gray-300 dark:border-gray-900 md:py-16 py-8 z-10">
     <section class="flex md:flex-row flex-wrap container w-full max-h-fit mx-auto px-6 justify-between">

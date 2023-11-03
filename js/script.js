@@ -45,3 +45,4 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector("body").classList.add("loaded");
     }, 10)
   });
+ScrollReveal().reveal('.RevealTitle', {delay: 500});
