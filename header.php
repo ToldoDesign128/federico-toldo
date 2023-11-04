@@ -32,7 +32,7 @@
                <p id="menuClose" class="hidden text-gray-900 dark:text-gray-100">Close</p>
             </div>
             <a href="<?php echo home_url(); ?>" class="lg:w-3/12 w-auto text-center font-semibold text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">
-               Federico Toldo
+               Federico Toldo <span class="text-[#eb0000] text-xl">*</span>
             </a>
             <div class="lg:w-3/12 lg:flex justify-end hidden">
                <a id="headerCta" href="<?php echo get_permalink(get_page_by_path('contatti'));; ?>" class="w-auto text-gray-900 lg:hover:text-gray-100 dark:text-gray-100 dark:lg:hover:text-gray-900 border bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border-gray-900 dark:border-gray-100 rounded py-2 px-5">

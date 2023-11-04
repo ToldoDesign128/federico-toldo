@@ -17,8 +17,8 @@
     </section>
     <!-- First content -->
     <section class="container w-full flex flex-wrap justify-between mx-auto px-6 lg:py-12 py-8">
-        <h3 class="lg:w-1/2 w-full text-5xl text-gray-800 dark:text-gray-200" style="line-height: 1.2;">Aiuto piccole e grandi aziende a migliorare la loro presenza online</h3>
-        <div class="lg:w-3/12 w-full flex flex-wrap">
+        <h3 class="lg:w-1/2 w-full lg:text-5xl md:text-4xl text-3xl text-gray-800 dark:text-gray-200" style="line-height: 1.2;">Aiuto piccole e grandi aziende a migliorare la loro presenza online</h3>
+        <div class="lg:w-3/12 w-full flex flex-wrap lg:py-0 py-6">
             <p class="text-xl text-gray-700 dark:text-gray-300">Combino la passione per il design con quella per le tecnologie web permettendomi di realizzare progetti prestanti e sensazionali</p>
             <a href="about" class="group w-full flex text-4xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 transition-all duration-300 py-6">Chi sono<img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
         </div>
@@ -26,7 +26,7 @@
     <!-- Sezione progetti -->
     <section class="container w-full mx-auto px-6 lg:py-12 py-8">
         <h4 class="uppercase text-gray-600 dark:text-gray-400">Alcuni lavori recenti</h4>
-        <div class="w-full flex flex-wrap py-8">
+        <div class="w-full flex flex-wrap lg:py-8 py-4">
             <?php
             $loop = new WP_Query(array(
                 'post_type'         => 'progetti',
@@ -40,8 +40,8 @@
                 <a href="<?php the_permalink(); ?>" class="w-full group">
                     <article class="w-full flex flex-wrap justify-between text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 py-8">
                         <div class="lg:w-8/12 w-full flex flex-wrap lg:ml-[8.333%]">
-                            <p class="w-full lg:text-4xl md:text-3xl text-2xl lg:group-hover:ml-4 transition-all duration-300"><?php echo the_title(); ?></p>
-                            <p class="lg:w-8/12 w-full lg:text-2xl md:text-xl text-lg lg:group-hover:ml-4 transition-all duration-300"><?php echo get_the_excerpt();?></p>
+                            <p class="w-full lg:text-4xl md:text-3xl text-2xl lg:py-0 py-6 lg:group-hover:ml-4 transition-all duration-300"><?php echo the_title(); ?></p>
+                            <p class="lg:w-8/12 w-full lg:text-2xl md:text-xl lg:pb-0 pb-6 text-lg lg:group-hover:ml-4 transition-all duration-300"><?php echo get_the_excerpt();?></p>
                         </div>
                         <div class="lg:w-3/12 w-full overflow-hidden rounded">
                             <?php
@@ -59,6 +59,8 @@
             <?php endwhile; ?>
 
         </div>
+        <a href="progetti" class="group w-full flex justify-end md:text-4xl text-3xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 lg:pr-4 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 transition-all duration-300 py-6">Tutti i miei Progetti<img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
     </section>
+    <!-- Sezione CTA -->
 </main>
 <?php get_footer(); ?>
