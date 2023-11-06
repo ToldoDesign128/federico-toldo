@@ -4,13 +4,13 @@ $page_id = get_queried_object_id();
 <main>
     <!-- hero     -->
     <section class="w-full">
-        <div class="md:h-[70dvh] overflow-hidden">
+        <div class="h-[70dvh] overflow-hidden">
             <?php
             wp_reset_query();
             while (have_posts()) : the_post();
 
                 if (has_post_thumbnail()) {
-                    echo the_post_thumbnail(null, 'full', ['class' => 'w-full lg:aspect-video aspect-auto object-cover']);
+                    get_the_post_thumbnail(null, 'full', ['class' => 'w-full lg:aspect-video aspect-auto object-cover']);
                 } else {
                     echo '<img class="w-full lg:aspect-video aspect-auto object-cover" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
                 };

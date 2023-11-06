@@ -606,6 +606,12 @@ video {
 .h-px {
   height: 1px;
 }
+.h-screen {
+  height: 100vh;
+}
+.h-\[70dvh\] {
+  height: 70dvh;
+}
 .max-h-fit {
   max-height: -moz-fit-content;
   max-height: fit-content;
