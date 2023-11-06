@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main class="w-full py-12">
-    <section class="container mx-auto p-6">
+    <section class="container mx-auto py-12 px-6">
         <?php
         wp_reset_query(); // necessary to reset query
         while (have_posts()) : the_post();?>
