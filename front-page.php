@@ -4,7 +4,6 @@ $page_id = get_queried_object_id(); ?>
     <!-- Hero -->
     <section class="w-full relative bg-gray-300 dark:bg-gray-700 lg:mb-6 mb-4">
         <div class="absolute top-0 left-[50%] lg:h-screen h-[80vh] lg:w-auto w-full overflow-hidden translate-x-[-50%]">
-            <img src="" alt="" class="h-full object-cover z-0">
             <?php
             wp_reset_query();
             while (have_posts()) : the_post();
