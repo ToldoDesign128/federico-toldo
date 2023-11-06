@@ -55,7 +55,7 @@
                   <ul class="lg:w-1/2 w-5/12">
                   <li class="my-2">
                         <?php
-                        $mail_option_link = get_field('mail_option');
+                        $mail_option_link = get_field('mail_option','option');
                         if ($mail_option_link) :
                             $mail_option_link_url = $mail_option_link['url'];
                             $mail_option_link_title = $mail_option_link['title'];
@@ -75,7 +75,7 @@
                     </li>
                     <li class="my-2">
                         <?php
-                        $linkedin_option_link = get_field('linkedin_option');
+                        $linkedin_option_link = get_field('linkedin_option','option');
                         if ($linkedin_option_link) :
                             $linkedin_option_link_url = $linkedin_option_link['url'];
                             $linkedin_option_link_title = $linkedin_option_link['title'];
@@ -90,7 +90,7 @@
                     </li>
                     <li class="my-2">
                         <?php
-                        $github_option_link = get_field('github_option');
+                        $github_option_link = get_field('github_option','option');
                         if ($github_option_link) :
                             $github_option_link_url = $github_option_link['url'];
                             $github_option_link_title = $github_option_link['title'];
@@ -106,7 +106,7 @@
                   </ul>
                </div>
                <div class="w-full flex justify-between items-center">
-                  <a href="#" class="text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">Privacy Policy</a>
+                  <a href="privacy-policy" class="text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">Privacy Policy</a>
                   <!-- Icona dark mode -->
                   <div>
                      <a id="theme-switcher" class="hidden dark:block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" href="#" data-theme="light">

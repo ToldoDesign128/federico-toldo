@@ -31,7 +31,7 @@
                 <ul class="lg:w-1/2 md:w-5/12 w-full md:ml-8">
                     <li class="my-2">
                         <?php
-                        $mail_option_link = get_field('mail_option');
+                        $mail_option_link = get_field('mail_option','option');
                         if ($mail_option_link) :
                             $mail_option_link_url = $mail_option_link['url'];
                             $mail_option_link_title = $mail_option_link['title'];
@@ -43,15 +43,10 @@
                                 <?php echo esc_html($mail_option_link_title); ?>
                             </a>
                         <?php endif; ?>
-                        <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">
-                            <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
-                            <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
-                            info@federicotoldo.com
-                        </a>
                     </li>
                     <li class="my-2">
                         <?php
-                        $linkedin_option_link = get_field('linkedin_option');
+                        $linkedin_option_link = get_field('linkedin_option','option');
                         if ($linkedin_option_link) :
                             $linkedin_option_link_url = $linkedin_option_link['url'];
                             $linkedin_option_link_title = $linkedin_option_link['title'];
@@ -66,7 +61,7 @@
                     </li>
                     <li class="my-2">
                         <?php
-                        $github_option_link = get_field('github_option');
+                        $github_option_link = get_field('github_option','option');
                         if ($github_option_link) :
                             $github_option_link_url = $github_option_link['url'];
                             $github_option_link_title = $github_option_link['title'];
