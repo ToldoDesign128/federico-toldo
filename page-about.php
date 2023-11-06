@@ -5,7 +5,7 @@ $page_id = get_queried_object_id();
     <!-- hero     -->
     <section class="w-full">
         <div class="md:h-[70dvh] overflow-hidden">
-            <img width="1536px" height="2048px" class="w-full lg:aspect-video aspect-auto object-cover" src="http://sergiom143.sg-host.com/wp-content/uploads/2023/11/Federico_Toldo.jpeg"/>            
+            <img width="1536px" height="2048px" class="w-full lg:aspect-video aspect-auto object-cover" src="http://sergiom143.sg-host.com/wp-content/uploads/2023/11/Federico_Toldo.jpeg" alt="Una mia foto"/>            
         </div>
         <div class="container flex flex-wrap mx-auto px-6 lg:py-8 py-4">
             <h1 class="md:w-8/12 w-full lg:text-7xl md:text-6xl text-5xl text-gray-900 dark:text-gray-100 my-4" style="line-height: 1.2;">
