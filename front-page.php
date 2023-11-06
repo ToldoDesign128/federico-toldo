@@ -5,6 +5,15 @@ $page_id = get_queried_object_id(); ?>
     <section class="w-full relative bg-gray-300 dark:bg-gray-700 lg:mb-6 mb-4">
         <div class="absolute top-0 left-[50%] lg:h-screen h-[80vh] lg:w-auto w-full overflow-hidden translate-x-[-50%]">
             <img src="" alt="" class="h-full object-cover z-0">
+            <?php
+            wp_reset_query();
+            while (have_posts()) : the_post();
+
+                if (has_post_thumbnail()) {
+                    echo get_the_post_thumbnail(null, 'full', ['class' => 'h-full object-cover z-0']);
+                };
+            endwhile;
+            ?>
         </div>
         <div class="lg:h-screen h-[80vh] w-full relative container flex flex-wrap lg:items-center items-end mx-auto px-6 z-[1]">
             <div class="w-full flex flex-wrap justify-between lg:mt-64">

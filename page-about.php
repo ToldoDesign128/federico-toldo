@@ -10,7 +10,7 @@ $page_id = get_queried_object_id();
             while (have_posts()) : the_post();
 
                 if (has_post_thumbnail()) {
-                    get_the_post_thumbnail(null, 'full', ['class' => 'w-full lg:aspect-video aspect-auto object-cover']);
+                    echo get_the_post_thumbnail(null, 'full', ['class' => 'w-full lg:aspect-video aspect-auto object-cover']);
                 } else {
                     echo '<img class="w-full lg:aspect-video aspect-auto object-cover" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
                 };
