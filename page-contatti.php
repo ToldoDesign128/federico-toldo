@@ -23,13 +23,15 @@
                 <div class="lg:my-10 my-6">
                     <p class="my-2 text-sm text-gray-700 dark:text-gray-300 uppercase">Dettagli di contatto</p>
                     <?php
-                    $mail_option_link = the_field('mail_option','option');
+                    $mail_option_link = get_field('mail_option', 'option');
                     if ($mail_option_link) :
                         $mail_option_link_url = $mail_option_link['url'];
                         $mail_option_link_title = $mail_option_link['title'];
                         $mail_option_link_target = $mail_option_link['target'] ? $mail_option_link['target'] : '_self';
                     ?>
-                        <a class="text-lg text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($mail_option_link_url); ?>" target="<?php echo esc_attr($mail_option_link_target); ?>"><?php echo esc_html($mail_option_link_title); ?><img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
+                        <a class="text-lg text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($mail_option_link_url); ?>" target="<?php echo esc_attr($mail_option_link_target); ?>">
+                            <?php echo esc_html($mail_option_link_title); ?>
+                        </a>
                     <?php endif; ?>
                 </div>
                 <ul class="lg:my-10 my-6">
@@ -41,7 +43,7 @@
                     <li class="my-2 text-sm text-gray-700 dark:text-gray-300 uppercase">Social</li>
                     <li class="my-2 text-lg">
                         <?php
-                        $linkedin_option_link = the_field('linkedin_option','option');
+                        $linkedin_option_link = get_field('linkedin_option', 'option');
                         if ($linkedin_option_link) :
                             $linkedin_option_link_url = $linkedin_option_link['url'];
                             $linkedin_option_link_title = $linkedin_option_link['title'];
@@ -56,7 +58,7 @@
                     </li>
                     <li class="my-2 text-lg">
                         <?php
-                        $github_option_link = the_field('github_option','option');
+                        $github_option_link = get_field('github_option', 'option');
                         if ($github_option_link) :
                             $github_option_link_url = $github_option_link['url'];
                             $github_option_link_title = $github_option_link['title'];
