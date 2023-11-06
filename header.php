@@ -53,21 +53,56 @@
                      <li class="my-2 text-gray-900 dark:text-gray-100">©2023 Federico Toldo</li>
                   </ul>
                   <ul class="lg:w-1/2 w-5/12">
-                     <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">
-                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
-                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
-                           info@federicotoldo.com</a>
-                     </li>
-                     <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="Linkedin">
-                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="Linkedin-dark">
-                           Linkedin</a>
-                     </li>
-                     <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="Github">
-                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="Github-dark">
-                           GitHub</a>
-                     </li>
+                  <li class="my-2">
+                        <?php
+                        $mail_option_link = get_field('mail_option');
+                        if ($mail_option_link) :
+                            $mail_option_link_url = $mail_option_link['url'];
+                            $mail_option_link_title = $mail_option_link['title'];
+                            $mail_option_link_target = $mail_option_link['target'] ? $mail_option_link['target'] : '_self';
+                        ?>
+                            <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($mail_option_link_url); ?>" target="<?php echo esc_attr($mail_option_link_target); ?>">
+                                <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
+                                <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
+                                <?php echo esc_html($mail_option_link_title); ?>
+                            </a>
+                        <?php endif; ?>
+                        <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">
+                            <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
+                            <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
+                            info@federicotoldo.com
+                        </a>
+                    </li>
+                    <li class="my-2">
+                        <?php
+                        $linkedin_option_link = get_field('linkedin_option');
+                        if ($linkedin_option_link) :
+                            $linkedin_option_link_url = $linkedin_option_link['url'];
+                            $linkedin_option_link_title = $linkedin_option_link['title'];
+                            $linkedin_option_link_target = $linkedin_option_link['target'] ? $linkedin_option_link['target'] : '_self';
+                        ?>
+                            <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($linkedin_option_link_url); ?>" target="<?php echo esc_attr($linkedin_option_link_target); ?>">
+                                <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="">
+                                <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="">
+                                <?php echo esc_html($linkedin_option_link_title); ?>
+                            </a>
+                        <?php endif; ?>
+                    </li>
+                    <li class="my-2">
+                        <?php
+                        $github_option_link = get_field('github_option');
+                        if ($github_option_link) :
+                            $github_option_link_url = $github_option_link['url'];
+                            $github_option_link_title = $github_option_link['title'];
+                            $github_option_link_target = $github_option_link['target'] ? $github_option_link['target'] : '_self';
+                        ?>
+                            <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($github_option_link_url); ?>" target="<?php echo esc_attr($github_option_link_target); ?>">
+                                <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="">
+                                <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="">
+                                <?php echo esc_html($github_option_link_title); ?>
+                            </a>
+                        <?php endif; ?>
+                    </li>
                   </ul>
                </div>
                <div class="w-full flex justify-between items-center">

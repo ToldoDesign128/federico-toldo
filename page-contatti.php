@@ -11,13 +11,26 @@
     <div class="container mx-auto lg:py-14 md:py-12 py-10 px-6">
         <section class="flex flex-wrap justify-between">
             <div class="lg:w-7/12 w-full lg:ml-[8.33333%] lg:order-1 order-2">
-                <?php echo do_shortcode('[ninja_form id=1]'); ?>
+                <?php echo do_shortcode('[ninja_form id=3]'); ?>
             </div>
             <div class="lg:w-3/12 w-full lg:my-8 my-4 lg:order-2 order-1">
-                <img class="lg:block hidden w-2/5 aspect-square object-cover rounded-full" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg" />
+                <?php
+                if (has_post_thumbnail()) {
+                    echo get_the_post_thumbnail(null, 'full', ['class' => 'lg:block hidden w-2/5 aspect-square object-cover rounded-full']);
+                } else {
+                    echo '<img class="lg:block hidden w-2/5 aspect-square object-cover rounded-full" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
+                }; ?>
                 <div class="lg:my-10 my-6">
                     <p class="my-2 text-sm text-gray-700 dark:text-gray-300 uppercase">Dettagli di contatto</p>
-                    <a class="text-lg text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">info@federicotoldo.com</a>
+                    <?php
+                    $mail_option_link = get_field('mail_option');
+                    if ($mail_option_link) :
+                        $mail_option_link_url = $mail_option_link['url'];
+                        $mail_option_link_title = $mail_option_link['title'];
+                        $mail_option_link_target = $mail_option_link['target'] ? $mail_option_link['target'] : '_self';
+                    ?>
+                        <a class="text-lg text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($mail_option_link_url); ?>" target="<?php echo esc_attr($mail_option_link_target); ?>"><?php echo esc_html($mail_option_link_title); ?><img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
+                    <?php endif; ?>
                 </div>
                 <ul class="lg:my-10 my-6">
                     <li class="my-2 text-sm text-gray-700 dark:text-gray-300 uppercase">Informazioni</li>
@@ -26,17 +39,35 @@
                 </ul>
                 <ul class="lg:block hidden lg:my-10 my-6">
                     <li class="my-2 text-sm text-gray-700 dark:text-gray-300 uppercase">Social</li>
-                    <li class="my-2 text-lg"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                            <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="">
-                            <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="">
-                            Linkedin
-                        </a>
+                    <li class="my-2 text-lg">
+                        <?php
+                        $linkedin_option_link = get_field('linkedin_option');
+                        if ($linkedin_option_link) :
+                            $linkedin_option_link_url = $linkedin_option_link['url'];
+                            $linkedin_option_link_title = $linkedin_option_link['title'];
+                            $linkedin_option_link_target = $linkedin_option_link['target'] ? $linkedin_option_link['target'] : '_self';
+                        ?>
+                            <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($linkedin_option_link_url); ?>" target="<?php echo esc_attr($linkedin_option_link_target); ?>">
+                                <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="">
+                                <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="">
+                                <?php echo esc_html($linkedin_option_link_title); ?>
+                            </a>
+                        <?php endif; ?>
                     </li>
-                    <li class="my-2 text-lg"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                            <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="">
-                            <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="">
-                            GitHub
-                        </a>
+                    <li class="my-2 text-lg">
+                        <?php
+                        $github_option_link = get_field('github_option');
+                        if ($github_option_link) :
+                            $github_option_link_url = $github_option_link['url'];
+                            $github_option_link_title = $github_option_link['title'];
+                            $github_option_link_target = $github_option_link['target'] ? $github_option_link['target'] : '_self';
+                        ?>
+                            <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($github_option_link_url); ?>" target="<?php echo esc_attr($github_option_link_target); ?>">
+                                <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="">
+                                <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="">
+                                <?php echo esc_html($github_option_link_title); ?>
+                            </a>
+                        <?php endif; ?>
                     </li>
                 </ul>
             </div>

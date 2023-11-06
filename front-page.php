@@ -45,7 +45,7 @@ $page_id = get_queried_object_id(); ?>
                             <p class="lg:w-8/12 w-full lg:text-xl md:text-lg lg:pb-0 pb-6 text-lg lg:group-hover:ml-4 transition-all duration-300">
                                 <?php
                                 $excerpt = get_the_excerpt();
-                                $excerpt = substr($excerpt, 0, 100);
+                                $excerpt = substr($excerpt, 0, 200);
                                 echo $excerpt;
                                 ?>
                             </p>
