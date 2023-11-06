@@ -67,11 +67,6 @@
                                 <?php echo esc_html($mail_option_link_title); ?>
                             </a>
                         <?php endif; ?>
-                        <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">
-                            <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
-                            <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
-                            info@federicotoldo.com
-                        </a>
                     </li>
                     <li class="my-2">
                         <?php
