@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php get_header(); 
+$page_id = get_queried_object_id();?>
 <main>
     <!-- Hero -->
     <section class="w-full relative bg-gray-300 dark:bg-gray-700 lg:mb-6 mb-4">
@@ -8,7 +9,7 @@
         <div class="lg:h-screen h-[80vh] w-full relative container flex flex-wrap lg:items-center items-end mx-auto px-6 z-[1]">
             <div class="w-full flex flex-wrap justify-between lg:mt-64">
                 <div class="lg:w-4/12 lg:block hidden w-full">
-                    <h1 class="text-4xl text-gray-800 dark:text-gray-200">Ciao, mi chiamo Federico piacere di conoscerti</h1>
+                    <h1 class="text-4xl text-gray-800 dark:text-gray-200"><?php echo esc_html(get_field('hero_titolo_1', $page_id)); ?></h1>
                     <p class="text-xl py-6 text-gray-700 dark:text-gray-300">Stai cercando di migliorare la tua presenza online?<br>Hai trovato chi fa al caso tuo!</p>
                 </div>
                 <h2 class="lg:w-auto w-full lg:text-4xl text-3xl text-right font-semibold text-gray-800 dark:text-gray-200 lg:py-0 py-8">Freelance<br>Designer & Developer</h2>
@@ -17,9 +18,9 @@
     </section>
     <!-- First content -->
     <section class="container w-full flex flex-wrap justify-between mx-auto px-6 lg:py-12 py-8">
-        <h3 class="lg:w-1/2 w-full lg:text-5xl md:text-4xl text-3xl text-gray-800 dark:text-gray-200" style="line-height: 1.2;">Aiuto piccole e grandi aziende a migliorare la loro presenza online</h3>
+        <h3 class="lg:w-1/2 w-full lg:text-5xl md:text-4xl text-3xl text-gray-800 dark:text-gray-200" style="line-height: 1.2;"><?php echo esc_html(get_field('section_title_home', $page_id)); ?></h3>
         <div class="lg:w-3/12 w-full flex flex-wrap lg:py-0 py-6">
-            <p class="text-xl text-gray-700 dark:text-gray-300">Combino la passione per il design con quella per le tecnologie web permettendomi di realizzare progetti prestanti e sensazionali</p>
+            <p class="text-xl text-gray-700 dark:text-gray-300"><?php echo esc_html(get_field('section_title_2_home', $page_id)); ?></p>
             <a href="about" class="group w-full flex text-4xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 transition-all duration-300 py-6">Chi sono<img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
         </div>
     </section>
