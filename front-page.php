@@ -21,7 +21,7 @@ $page_id = get_queried_object_id(); ?>
         <h3 class="lg:w-1/2 w-full lg:text-5xl md:text-4xl text-3xl text-gray-800 dark:text-gray-200" style="line-height: 1.2;"><?php echo esc_html(get_field('section_title_home', $page_id)); ?></h3>
         <div class="lg:w-3/12 w-full flex flex-wrap lg:py-0 py-6">
             <p class="text-xl text-gray-700 dark:text-gray-300"><?php echo esc_html(get_field('section_title_2_home', $page_id)); ?></p>
-            <a href="about" class="group w-full flex text-4xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 transition-all duration-300 py-6">Chi sono<img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
+            <a href="about" class="group w-full flex text-4xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 transition-all duration-300 py-6">Chi sono<img width="24px" height="24px" class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
         </div>
     </section>
     <!-- Sezione progetti -->
@@ -66,7 +66,7 @@ $page_id = get_queried_object_id(); ?>
             <?php endwhile; ?>
 
         </div>
-        <a href="progetti" class="group w-full flex justify-end md:text-4xl text-3xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 lg:pr-4 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 transition-all duration-300 py-6">Tutti i miei Progetti<img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
+        <a href="progetti" class="group w-full flex justify-end md:text-4xl text-3xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 lg:pr-4 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 transition-all duration-300 py-6">Tutti i miei Progetti<img width="24px" height="24px" class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
     </section>
     <!-- Sezione CTA -->
 </main>
