@@ -1,5 +1,5 @@
-<?php get_header(); 
-$page_id = get_queried_object_id();?>
+<?php get_header();
+$page_id = get_queried_object_id(); ?>
 <main>
     <!-- Hero -->
     <section class="w-full relative bg-gray-300 dark:bg-gray-700 lg:mb-6 mb-4">
@@ -42,7 +42,13 @@ $page_id = get_queried_object_id();?>
                     <article class="w-full flex flex-wrap justify-between text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 py-8">
                         <div class="lg:w-8/12 w-full flex flex-wrap lg:ml-[8.333%]">
                             <p class="w-full lg:text-4xl md:text-3xl text-2xl lg:py-0 py-6 lg:group-hover:ml-4 transition-all duration-300"><?php echo the_title(); ?></p>
-                            <p class="lg:w-8/12 w-full lg:text-2xl md:text-xl lg:pb-0 pb-6 text-lg lg:group-hover:ml-4 transition-all duration-300"><?php echo get_the_excerpt();?></p>
+                            <p class="lg:w-8/12 w-full lg:text-xl md:text-lg lg:pb-0 pb-6 text-lg lg:group-hover:ml-4 transition-all duration-300">
+                                <?php
+                                $excerpt = get_the_excerpt();
+                                $excerpt = substr($excerpt, 0, 100);
+                                echo $excerpt;
+                                ?>
+                            </p>
                         </div>
                         <div class="lg:w-3/12 w-full overflow-hidden rounded">
                             <?php

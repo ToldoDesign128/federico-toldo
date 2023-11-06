@@ -39,7 +39,9 @@
     <?php if (have_posts()) : ?>
         <section class="w-full lg:py-12 md:py-10 py-6">
             <div class="w-full container mx-auto flex flex-col px-6">
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while (have_posts()) : the_post(); 
+                $page_id = get_queried_object_id();                
+                ?>
 
                     <div class="w-full py-6 border-b border-gray-300 dark:border-gray-700">
                         <a class="text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100" href="<?php the_permalink(); ?>">
@@ -52,7 +54,7 @@
                             <div class="flex flex-row flex-wrap justify-between items-center ml-0 lg:hover:ml-4 transition-all">
                                 <p class="md:w-5/12 w-full lg:text-4xl md:text-3xl text-2xl md:order-1 order-3"><?php echo the_title(); ?></p>
                                 <p class="md:w-auto lg:text-2xl md:order-2 order-1">Design e Sviluppo</p>
-                                <p class="md:w-auto lg:text-2xl md:order-3 order-2">2023</p>
+                                <p class="md:w-auto lg:text-2xl md:order-3 order-2"><?php echo esc_html(get_field('anno_hero_progetti')); ?></p>
                             </div>
                         </a>
                     </div>

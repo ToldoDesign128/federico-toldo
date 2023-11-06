@@ -74,6 +74,7 @@ function change_footer_version()
 }
 add_filter('update_footer', 'change_footer_version', 9999);
 
+
 // Remove comments
 add_action('admin_init', function () {
 	global $pagenow;
