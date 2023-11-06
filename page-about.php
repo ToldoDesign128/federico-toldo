@@ -6,7 +6,7 @@ $page_id = get_queried_object_id();
     <section class="w-full">
         <div class="md:h-[70dvh] overflow-hidden">
             <?php
-            wp_reset_query(); // necessary to reset query
+            wp_reset_query();
             while (have_posts()) : the_post();
 
                 if (has_post_thumbnail()) {
@@ -14,7 +14,8 @@ $page_id = get_queried_object_id();
                 } else {
                     echo '<img class="w-full lg:aspect-video aspect-auto object-cover" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
                 };
-            endwhile; ?>
+            endwhile;
+            ?>
         </div>
         <div class="container flex flex-wrap mx-auto px-6 lg:py-8 py-4">
             <h1 class="md:w-8/12 w-full lg:text-7xl md:text-6xl text-5xl text-gray-900 dark:text-gray-100 my-4" style="line-height: 1.2;">
