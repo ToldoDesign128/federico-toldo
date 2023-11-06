@@ -23,7 +23,7 @@
                 <div class="lg:my-10 my-6">
                     <p class="my-2 text-sm text-gray-700 dark:text-gray-300 uppercase">Dettagli di contatto</p>
                     <?php
-                    $mail_option_link = get_field('mail_option','option');
+                    $mail_option_link = the_field('mail_option','option');
                     if ($mail_option_link) :
                         $mail_option_link_url = $mail_option_link['url'];
                         $mail_option_link_title = $mail_option_link['title'];
@@ -41,7 +41,7 @@
                     <li class="my-2 text-sm text-gray-700 dark:text-gray-300 uppercase">Social</li>
                     <li class="my-2 text-lg">
                         <?php
-                        $linkedin_option_link = get_field('linkedin_option','option');
+                        $linkedin_option_link = the_field('linkedin_option','option');
                         if ($linkedin_option_link) :
                             $linkedin_option_link_url = $linkedin_option_link['url'];
                             $linkedin_option_link_title = $linkedin_option_link['title'];
@@ -56,7 +56,7 @@
                     </li>
                     <li class="my-2 text-lg">
                         <?php
-                        $github_option_link = get_field('github_option','option');
+                        $github_option_link = the_field('github_option','option');
                         if ($github_option_link) :
                             $github_option_link_url = $github_option_link['url'];
                             $github_option_link_title = $github_option_link['title'];
