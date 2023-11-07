@@ -7,7 +7,7 @@
    <meta name="viewport" content="<?php echo esc_attr($viewport_content); ?>">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="format-detection" content="telephone=no">
-   <meta name="theme-color" content="#1254a2">
+   <meta name="theme-color" content="#ff0000">
    <meta name="description" content="<?php bloginfo('description'); ?>">
    <title>
       <?php if (is_archive()) {

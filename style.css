@@ -597,6 +597,9 @@ video {
 .h-\[0\.5px\] {
   height: 0.5px;
 }
+.h-\[70dvh\] {
+  height: 70dvh;
+}
 .h-\[80vh\] {
   height: 80vh;
 }
@@ -605,12 +608,6 @@ video {
 }
 .h-px {
   height: 1px;
-}
-.h-screen {
-  height: 100vh;
-}
-.h-\[70dvh\] {
-  height: 70dvh;
 }
 .max-h-fit {
   max-height: -moz-fit-content;
@@ -1347,9 +1344,6 @@ footer #menu-footer .current_page_item::after {
   }
   .md\:flex {
     display: flex;
-  }
-  .md\:h-\[70dvh\] {
-    height: 70dvh;
   }
   .md\:w-1\/2 {
     width: 50%;
