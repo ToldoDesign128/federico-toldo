@@ -567,9 +567,6 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
-.ml-\[8\.333\%\] {
-  margin-left: 8.333%;
-}
 .block {
   display: block;
 }
@@ -612,12 +609,6 @@ video {
 .h-px {
   height: 1px;
 }
-.h-screen {
-  height: 100vh;
-}
-.h-\[90vh\] {
-  height: 90vh;
-}
 .max-h-fit {
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -627,6 +618,9 @@ video {
 }
 .w-2\/5 {
   width: 40%;
+}
+.w-4\/12 {
+  width: 33.333333%;
 }
 .w-5\/12 {
   width: 41.666667%;
@@ -651,9 +645,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.w-4\/12 {
-  width: 33.333333%;
 }
 .translate-x-\[-50\%\] {
   --tw-translate-x: -50%;
@@ -822,14 +813,11 @@ video {
 .pt-10 {
   padding-top: 2.5rem;
 }
-.pt-48 {
-  padding-top: 12rem;
-}
-.pt-12 {
-  padding-top: 3rem;
-}
 .pt-24 {
   padding-top: 6rem;
+}
+.pt-48 {
+  padding-top: 12rem;
 }
 .text-center {
   text-align: center;
@@ -853,6 +841,10 @@ video {
   font-size: 3rem;
   line-height: 1;
 }
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -864,14 +856,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
-}
-.text-6xl {
-  font-size: 3.75rem;
-  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
@@ -1383,6 +1367,9 @@ footer #menu-footer .current_page_item::after {
   .md\:w-6\/12 {
     width: 50%;
   }
+  .md\:w-7\/12 {
+    width: 58.333333%;
+  }
   .md\:w-8\/12 {
     width: 66.666667%;
   }
@@ -1392,17 +1379,11 @@ footer #menu-footer .current_page_item::after {
   .md\:w-auto {
     width: auto;
   }
-  .md\:w-7\/12 {
-    width: 58.333333%;
-  }
   .md\:flex-row {
     flex-direction: row;
   }
   .md\:justify-normal {
     justify-content: normal;
-  }
-  .md\:gap-4 {
-    gap: 1rem;
   }
   .md\:px-5 {
     padding-left: 1.25rem;
@@ -1423,10 +1404,6 @@ footer #menu-footer .current_page_item::after {
   .md\:py-2 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-  }
-  .md\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
   .md\:text-2xl {
     font-size: 1.5rem;
@@ -1549,6 +1526,9 @@ footer #menu-footer .current_page_item::after {
   .lg\:w-auto {
     width: auto;
   }
+  .lg\:w-\[32\%\] {
+    width: 32%;
+  }
   .lg\:flex-row {
     flex-direction: row;
   }
@@ -1573,10 +1553,6 @@ footer #menu-footer .current_page_item::after {
   .lg\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
   .lg\:pb-0 {
     padding-bottom: 0px;

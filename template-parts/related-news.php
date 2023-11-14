@@ -1,7 +1,6 @@
 <?php
 $related_query = new WP_Query(array(
-    'post_type' => 'progetti',
-    'category__in' => wp_get_post_categories(get_the_ID()),
+    'post_type' => 'post',
     'post__not_in' => array(get_the_ID()),
     'posts_per_page' => 3,
     'orderby' => 'date',
@@ -11,7 +10,7 @@ if ($related_query->have_posts()) { ?>
 
     <div class="w-full">
         <h4 class="w-full font-medium lg:text-4xl md:text-3xl text-2xl text-gray-700 dark:text-gray-300 my-6 px-6">
-            Progetti Corelati
+            News Corelati
         </h4>
         <div class="lg:w-9/12 w-full flex flex-wrap justify-between gap-2 px-6">
             <?php while ($related_query->have_posts()) { ?>

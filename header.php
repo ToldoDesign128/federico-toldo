@@ -7,7 +7,7 @@
    <meta name="viewport" content="<?php echo esc_attr($viewport_content); ?>">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="format-detection" content="telephone=no">
-   <meta name="theme-color" content="#ff0000">
+   <meta name="theme-color" content="#ff3333">
    <meta name="description" content="<?php bloginfo('description'); ?>">
    <title>
       <?php if (is_archive()) {
@@ -158,8 +158,8 @@
                      <article class="w-full h-full relative rounded">
                         <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full h-full object-cover brightness-50 lg:hover:brightness-75 rounded transition-all duration-300']); ?>
                         <div class="absolute bottom-0 p-4 text-gray-100 text-4xl z-10">
-                           <p class="text-gray-100 text-4xl font-medium">Dai un'occhiata al mio ultimo progetto</p>
-                           <p class="text-gray-300 text-xl">www.weatherwatersand.com</p> <!-- Da sostituire con il field del URL -->
+                           <p class="text-gray-100 text-4xl font-medium py-4">Dai un'occhiata al mio ultimo progetto</p>
+                           <p class="text-gray-300 text-xl"><?php echo get_the_title(); ?></p> <!-- Da sostituire con il field del URL -->
                         </div>
                      </article>
                   </a>
