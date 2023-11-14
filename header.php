@@ -104,7 +104,7 @@
                   <a href="privacy-policy" class="text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">Privacy Policy</a>
                   <!-- Icona dark mode -->
                   <div>
-                     <a id="theme-switcher" class="hidden dark:block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" href="#" data-theme="light">
+                     <a id="theme-switcher" class="cursor-pointer hidden dark:block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" data-theme="light">
                         <div class="pointer-events-none">
                            <div class="inline-block w-[24px] text-center mr-4" data-theme-icon="light">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="inline-block h-6 w-6">
@@ -114,7 +114,7 @@
                            <span data-theme-name="light">Light</span>
                         </div>
                      </a>
-                     <a id="theme-switcher" class="block dark:hidden w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" href="#" data-theme="dark" data-te-dropdown-item-ref>
+                     <a id="theme-switcher" class="cursor-pointer block dark:hidden w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" data-theme="dark" data-te-dropdown-item-ref>
                         <div class="pointer-events-none">
                            <div class="inline-block w-[24px] text-center mr-4" data-theme-icon="dark">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="inline-block h-6 w-6">
