@@ -634,9 +634,6 @@ video {
 .w-\[24px\] {
   width: 24px;
 }
-.w-\[32\%\] {
-  width: 32%;
-}
 .w-\[48\.8\%\] {
   width: 48.8%;
 }
@@ -1141,6 +1138,10 @@ footer #menu-footer .current_page_item::after {
   color: rgb(209, 213, 219);
   background-color: rgb(17, 24, 39);
 }
+.contatti .nf-form-cont .nf-form-wrap .nf-response-msg,
+.contatti .nf-form-cont .ninja-forms-form-wrap .nf-response-msg {
+  color: rgb(17, 24, 39);
+}
 
 .dark .nf-form-cont .nf-form-layout .nf-field-container .nf-field-label label {
   color: rgb(209, 213, 219);
@@ -1156,6 +1157,10 @@ footer #menu-footer .current_page_item::after {
 .dark .nf-form-cont .nf-form-layout .nf-field-container .submit-wrap .ninja-forms-field:hover {
   color: rgb(17, 24, 39);
   background-color: rgb(209, 213, 219);
+}
+.dark .nf-form-cont .nf-form-wrap .nf-response-msg,
+.dark .nf-form-cont .ninja-forms-form-wrap .nf-response-msg {
+  color: rgb(209, 213, 219);
 }
 
 #loader-wrapper {
@@ -1526,11 +1531,11 @@ footer #menu-footer .current_page_item::after {
   .lg\:w-\[30\%\] {
     width: 30%;
   }
-  .lg\:w-auto {
-    width: auto;
-  }
   .lg\:w-\[32\%\] {
     width: 32%;
+  }
+  .lg\:w-auto {
+    width: auto;
   }
   .lg\:flex-row {
     flex-direction: row;
