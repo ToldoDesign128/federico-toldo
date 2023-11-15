@@ -1,1 +1,0 @@
-ScrollReveal().reveal('.RevealTitle', {delay: 500});

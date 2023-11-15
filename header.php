@@ -7,7 +7,7 @@
    <meta name="viewport" content="<?php echo esc_attr($viewport_content); ?>">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="format-detection" content="telephone=no">
-   <meta name="theme-color" content="#1254a2">
+   <meta name="theme-color" content="#ff3333">
    <meta name="description" content="<?php bloginfo('description'); ?>">
    <title>
       <?php if (is_archive()) {
@@ -23,20 +23,22 @@
    <header class="w-full fixed z-50">
       <div class="relative bg-gray-200 dark:bg-gray-800 z-40">
          <div class="flex container mx-auto py-5 px-6 justify-between items-center">
-            <div class="lg:w-40 w-auto flex items-center">
-               <button id="hamburgerButton" class="group py-4 px-[.5rem] mr-2 bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border border-gray-900 dark:border-gray-100 rounded-full">
+            <div class="lg:w-3/12 w-auto flex items-center">
+               <button id="hamburgerButton" title="Menu Button" class="group py-4 px-[.5rem] mr-2 bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border border-gray-900 dark:border-gray-100 rounded-full">
                   <span class="flex h-[0.5px] w-8 bg-gray-900 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
                   <span class="flex h-[0.5px] w-8 mt-3 bg-gray-950 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
                </button>
                <p id="menuOpen" class="lg:flex hidden text-gray-900 dark:text-gray-100">Menu</p>
                <p id="menuClose" class="hidden text-gray-900 dark:text-gray-100">Close</p>
             </div>
-            <a href="<?php echo home_url(); ?>" class="w-auto font-semibold text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">
-               Federico Toldo
+            <a href="<?php echo home_url(); ?>" class="lg:w-3/12 w-auto text-center font-semibold text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">
+               Federico Toldo <span class="text-[#eb0000] text-xl">*</span>
             </a>
-            <a id="headerCta" href="<?php echo get_permalink(get_page_by_path('contatti'));; ?>" class="lg:flex hidden w-auto text-gray-900 lg:hover:text-gray-100 dark:text-gray-100 dark:lg:hover:text-gray-900 border bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border-gray-900 dark:border-gray-100 rounded py-2 px-5">
-               Contattami
-            </a>
+            <div class="lg:w-3/12 lg:flex justify-end hidden">
+               <a id="headerCta" href="<?php echo get_permalink(get_page_by_path('contatti'));; ?>" class="w-auto text-gray-900 lg:hover:text-gray-100 dark:text-gray-100 dark:lg:hover:text-gray-900 border bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border-gray-900 dark:border-gray-100 rounded py-2 px-5">
+                  Contattami
+               </a>
+            </div>
          </div>
       </div>
       <span id="headerMenuBg" class="flex h-px w-full bg-gray-300 dark:bg-gray-700 z-50"></span>
@@ -51,28 +53,58 @@
                      <li class="my-2 text-gray-900 dark:text-gray-100">©2023 Federico Toldo</li>
                   </ul>
                   <ul class="lg:w-1/2 w-5/12">
-                     <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="mailto:info@federicotoldo.com" target="_blank">
-                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
-                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
-                           info@federicotoldo.com</a>
+                     <li class="my-2">
+                        <?php
+                        $mail_option_link = get_field('mail_option', 'option');
+                        if ($mail_option_link) :
+                           $mail_option_link_url = $mail_option_link['url'];
+                           $mail_option_link_title = $mail_option_link['title'];
+                           $mail_option_link_target = $mail_option_link['target'] ? $mail_option_link['target'] : '_self';
+                        ?>
+                           <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($mail_option_link_url); ?>" target="<?php echo esc_attr($mail_option_link_target); ?>">
+                              <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email.svg'; ?>" alt="mail">
+                              <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_email_w.svg'; ?>" alt="mail-dark">
+                              <?php echo esc_html($mail_option_link_title); ?>
+                           </a>
+                        <?php endif; ?>
                      </li>
-                     <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="Linkedin">
-                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="Linkedin-dark">
-                           Linkedin</a>
+                     <li class="my-2">
+                        <?php
+                        $linkedin_option_link = get_field('linkedin_option', 'option');
+                        if ($linkedin_option_link) :
+                           $linkedin_option_link_url = $linkedin_option_link['url'];
+                           $linkedin_option_link_title = $linkedin_option_link['title'];
+                           $linkedin_option_link_target = $linkedin_option_link['target'] ? $linkedin_option_link['target'] : '_self';
+                        ?>
+                           <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($linkedin_option_link_url); ?>" target="<?php echo esc_attr($linkedin_option_link_target); ?>">
+                              <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="">
+                              <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="">
+                              <?php echo esc_html($linkedin_option_link_title); ?>
+                           </a>
+                        <?php endif; ?>
                      </li>
-                     <li class="my-2"><a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="#" target="_blank">
-                           <img width="24px" height="24px" class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="Github">
-                           <img width="24px" height="24px" class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="Github-dark">
-                           GitHub</a>
+                     <li class="my-2">
+                        <?php
+                        $github_option_link = get_field('github_option', 'option');
+                        if ($github_option_link) :
+                           $github_option_link_url = $github_option_link['url'];
+                           $github_option_link_title = $github_option_link['title'];
+                           $github_option_link_target = $github_option_link['target'] ? $github_option_link['target'] : '_self';
+                        ?>
+                           <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($github_option_link_url); ?>" target="<?php echo esc_attr($github_option_link_target); ?>">
+                              <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="">
+                              <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="">
+                              <?php echo esc_html($github_option_link_title); ?>
+                           </a>
+                        <?php endif; ?>
                      </li>
                   </ul>
                </div>
                <div class="w-full flex justify-between items-center">
-                  <a href="#" class="text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">Privacy Policy</a>
+                  <a href="privacy-policy" class="text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">Privacy Policy</a>
                   <!-- Icona dark mode -->
                   <div>
-                     <a id="theme-switcher" class="hidden dark:block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" href="#" data-theme="light">
+                     <a id="theme-switcher" class="cursor-pointer hidden dark:block w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" data-theme="light">
                         <div class="pointer-events-none">
                            <div class="inline-block w-[24px] text-center mr-4" data-theme-icon="light">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="inline-block h-6 w-6">
@@ -82,7 +114,7 @@
                            <span data-theme-name="light">Light</span>
                         </div>
                      </a>
-                     <a id="theme-switcher" class="block dark:hidden w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" href="#" data-theme="dark" data-te-dropdown-item-ref>
+                     <a id="theme-switcher" class="cursor-pointer block dark:hidden w-full whitespace-nowrap bg-transparent px-3 py-2 text-sm font-normal text-gray-700 disabled:pointer-events-none disabled:bg-transparent disabled:text-gray-400 dark:text-gray-100" data-theme="dark" data-te-dropdown-item-ref>
                         <div class="pointer-events-none">
                            <div class="inline-block w-[24px] text-center mr-4" data-theme-icon="dark">
                               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="inline-block h-6 w-6">
@@ -114,8 +146,8 @@
                $loop = new WP_Query(array(
                   'post_type'         => 'progetti',
                   'post_status'       => 'publish',
-                  'orderby'           => 'count',
-                  'order'             => 'ASC',
+                  'orderby'           => 'date',
+                  'order'             => 'DESC',
                   'posts_per_page'    => 1,
                ));
 
@@ -124,10 +156,10 @@
 
                   <a href="<?php echo the_permalink(); ?>">
                      <article class="w-full h-full relative rounded">
-                        <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full h-full brightness-50 lg:hover:brightness-75 rounded transition-all duration-300']); ?>
+                        <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full h-full object-cover brightness-50 lg:hover:brightness-75 rounded transition-all duration-300']); ?>
                         <div class="absolute bottom-0 p-4 text-gray-100 text-4xl z-10">
-                           <p class="text-gray-100 text-4xl font-medium">Dai un'occhiata al mio ultimo progetto</p>
-                           <p class="text-gray-300 text-xl">www.weatherwatersand.com</p> <!-- Da sostituire con il field del URL -->
+                           <p class="text-gray-100 text-4xl font-medium py-4">Dai un'occhiata al mio ultimo progetto</p>
+                           <p class="text-gray-300 text-xl"><?php echo get_the_title(); ?></p> <!-- Da sostituire con il field del URL -->
                         </div>
                      </article>
                   </a>

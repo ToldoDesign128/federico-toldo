@@ -10,6 +10,7 @@ module.exports = {
     'page.php',
     'page-contatti.php',
     'page-about.php',
+    'privacy-policy.php',
     'archive.php',
     'archive-progetti.php',
     'single.php',

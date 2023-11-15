@@ -55,6 +55,12 @@
         }
       }
     }
+    .nf-form-wrap, 
+    .ninja-forms-form-wrap{
+      .nf-response-msg{
+        color: rgb(17 24 39);
+      }
+    }
   }
 }
 
@@ -85,6 +91,12 @@
             }
           }
         }
+      }
+    }
+    .nf-form-wrap, 
+    .ninja-forms-form-wrap{
+      .nf-response-msg{
+        color: rgb(209 213 219);
       }
     }
   }  

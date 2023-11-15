@@ -74,6 +74,7 @@ function change_footer_version()
 }
 add_filter('update_footer', 'change_footer_version', 9999);
 
+
 // Remove comments
 add_action('admin_init', function () {
 	global $pagenow;
@@ -117,7 +118,6 @@ if (function_exists('acf_add_options_page')) {
 function add_theme_scripts()
 {
 	wp_enqueue_style('style', get_stylesheet_uri());
-	wp_enqueue_style('locomotive', get_template_directory_uri() . '/css/locomotive-scroll.min.css');
 
 	wp_enqueue_script('script', get_template_directory_uri() . '/js/script.min.js', array('jquery'), 1.1, true);
 }
