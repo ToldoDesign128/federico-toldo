@@ -15,6 +15,7 @@
             </div>
             <div class="lg:w-3/12 w-full lg:my-8 my-4 lg:order-2 order-1">
                 <?php
+                wp_reset_query();
                 if (has_post_thumbnail()) {
                     echo get_the_post_thumbnail(null, 'full', ['class' => 'lg:block hidden w-2/5 aspect-square object-cover rounded-full']);
                 } else {

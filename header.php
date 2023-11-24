@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="scroll-smooth" <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?>>
 
 <head>
    <meta charset="<?php bloginfo('charset'); ?>">
@@ -19,7 +19,7 @@
    <?php wp_head(); ?>
 </head>
 
-<body <?php body_class("bg-gray-100 dark:bg-gray-900"); ?>>
+<body <?php body_class("bg-gray-100 dark:bg-gray-900 scroll-smooth"); ?>>
    <header class="w-full fixed z-50">
       <div class="relative bg-gray-200 dark:bg-gray-800 z-40">
          <div class="flex container mx-auto py-5 px-6 justify-between items-center">
@@ -77,8 +77,8 @@
                            $linkedin_option_link_target = $linkedin_option_link['target'] ? $linkedin_option_link['target'] : '_self';
                         ?>
                            <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($linkedin_option_link_url); ?>" target="<?php echo esc_attr($linkedin_option_link_target); ?>">
-                              <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="">
-                              <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="">
+                              <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin.svg'; ?>" alt="Linkedin icon">
+                              <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_linkedin_w.svg'; ?>" alt="Linkedin icon light">
                               <?php echo esc_html($linkedin_option_link_title); ?>
                            </a>
                         <?php endif; ?>
@@ -92,8 +92,8 @@
                            $github_option_link_target = $github_option_link['target'] ? $github_option_link['target'] : '_self';
                         ?>
                            <a class="flex text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300" href="<?php echo esc_url($github_option_link_url); ?>" target="<?php echo esc_attr($github_option_link_target); ?>">
-                              <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="">
-                              <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="">
+                              <img class="mr-2 dark:hidden" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github.svg'; ?>" alt="Github icon">
+                              <img class="mr-2 hidden dark:flex" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_github_w.svg'; ?>" alt="Github icon light">
                               <?php echo esc_html($github_option_link_title); ?>
                            </a>
                         <?php endif; ?>
@@ -156,7 +156,7 @@
 
                   <a href="<?php echo the_permalink(); ?>">
                      <article class="w-full h-full relative rounded">
-                        <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full h-full object-cover brightness-50 lg:hover:brightness-75 rounded transition-all duration-300']); ?>
+                        <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full h-full object-cover brightness-25 lg:hover:brightness-50 rounded transition-all duration-300']); ?>
                         <div class="absolute bottom-0 p-4 text-gray-100 text-4xl z-10">
                            <p class="text-gray-100 text-4xl font-medium py-4">Dai un'occhiata al mio ultimo progetto</p>
                            <p class="text-gray-300 text-xl"><?php echo get_the_title(); ?></p> <!-- Da sostituire con il field del URL -->
