@@ -36,7 +36,7 @@
                                     echo '<img class="lg:hidden block w-full aspect-video object-cover rounded md:mb-4 mb-2" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
                                 }; ?>
                                 <div class="flex flex-row flex-wrap justify-between items-center ml-0 lg:hover:ml-4 transition-all">
-                                    <p class="md:w-4/12 w-full lg:text-4xl md:text-3xl text-2xl md:order-1 order-3"><?php echo the_title(); ?></p>
+                                    <p class="md:w-6/12 w-full lg:text-4xl md:text-3xl text-2xl md:order-1 order-3"><?php echo the_title(); ?></p>
                                     <p class="md:w-auto lg:text-2xl md:order-3 order-2"><?php foreach ((get_the_category()) as $category){$catname=$category->cat_name; echo $catname;}; ?></p>
                                 </div>
                             </a>
