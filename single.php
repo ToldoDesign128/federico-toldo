@@ -30,7 +30,7 @@ while (have_posts()) : the_post();
                         </li>
                     </ul>
                 </nav>
-                <h1 class="font-normal lg:w-7/12 md:w-8/12 w-full lg:text-8xl md:text-7xl text-4xl text-gray-900 dark:text-gray-100">
+                <h1 class="font-normal lg:w-8/12 md:w-9/12 w-full lg:text-7xl md:text-6xl text-4xl text-gray-900 dark:text-gray-100">
                     <?php echo get_the_title(); ?>
                 </h1>
             </div>
