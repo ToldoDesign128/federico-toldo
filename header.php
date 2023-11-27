@@ -9,6 +9,24 @@
    <meta name="format-detection" content="telephone=no">
    <meta name="theme-color" content="#ff3333">
    <meta name="description" content="<?php bloginfo('description'); ?>">
+   <!-- Google Tag Manager -->
+   <script>
+      (function(w, d, s, l, i) {
+         w[l] = w[l] || [];
+         w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+         });
+         var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+         j.async = true;
+         j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+         f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-W8Z4FJ9C');
+   </script>
+   <!-- End Google Tag Manager -->
    <title>
       <?php if (is_archive()) {
          echo get_the_archive_title();
@@ -20,6 +38,9 @@
 </head>
 
 <body <?php body_class("bg-gray-100 dark:bg-gray-900 scroll-smooth"); ?>>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8Z4FJ9C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
    <header class="w-full fixed z-50">
       <div class="relative bg-gray-200 dark:bg-gray-800 z-40">
          <div class="flex container mx-auto py-5 px-6 justify-between items-center">
@@ -156,7 +177,7 @@
 
                   <a href="<?php echo the_permalink(); ?>">
                      <article class="w-full h-full relative rounded">
-                        <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full h-full object-cover brightness-25 lg:hover:brightness-50 rounded transition-all duration-300']); ?>
+                        <?php echo get_the_post_thumbnail(null, 'large', ['class' => 'w-full h-full object-cover brightness-[0.3] lg:hover:brightness-50 rounded transition-all duration-300']); ?>
                         <div class="absolute bottom-0 p-4 text-gray-100 text-4xl z-10">
                            <p class="text-gray-100 text-4xl font-medium py-4">Dai un'occhiata al mio ultimo progetto</p>
                            <p class="text-gray-300 text-xl"><?php echo get_the_title(); ?></p> <!-- Da sostituire con il field del URL -->
