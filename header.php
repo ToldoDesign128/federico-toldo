@@ -46,8 +46,8 @@
          <div class="flex container mx-auto py-5 px-6 justify-between items-center">
             <div class="lg:w-3/12 w-auto flex items-center">
                <button id="hamburgerButton" title="Menu Button" class="group py-4 px-[.5rem] mr-2 bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border border-gray-900 dark:border-gray-100 rounded-full">
-                  <span class="flex h-[0.5px] w-8 bg-gray-900 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
-                  <span class="flex h-[0.5px] w-8 mt-3 bg-gray-950 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
+                  <span class="flex h-px w-8 bg-gray-900 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
+                  <span class="flex h-px w-8 mt-3 bg-gray-950 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
                </button>
                <p id="menuOpen" class="lg:flex hidden text-gray-900 dark:text-gray-100">Menu</p>
                <p id="menuClose" class="hidden text-gray-900 dark:text-gray-100">Close</p>
