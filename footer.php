@@ -25,7 +25,7 @@
             <div class="flex md:flex-row flex-col justify-between mb-12">
                 <ul class="md:w-1/2 w-full">
                     <li class="my-2 text-gray-900 dark:text-gray-100">federicotoldo.com</li>
-                    <li class="my-2 text-gray-900 dark:text-gray-100">P.IVA 123456789</li>
+                    <li class="my-2 text-gray-900 dark:text-gray-100">P.IVA 02694260221</li>
                     <li class="my-2 text-gray-900 dark:text-gray-100">©2023 Federico Toldo</li>
                 </ul>
                 <ul class="lg:w-1/2 md:w-5/12 w-full md:ml-8">

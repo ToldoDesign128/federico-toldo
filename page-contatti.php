@@ -37,7 +37,7 @@
                 </div>
                 <ul class="lg:my-10 my-6">
                     <li class="my-2 text-sm text-gray-700 dark:text-gray-300 uppercase">Informazioni</li>
-                    <li class="my-2 text-lg text-gray-900 dark:text-gray-100">P.IVA 123456789</li>
+                    <li class="my-2 text-lg text-gray-900 dark:text-gray-100">P.IVA 02694260221</li>
                     <li class="my-2 text-lg text-gray-900 dark:text-gray-100">Località: Italia</li>
                 </ul>
                 <ul class="lg:block hidden lg:my-10 my-6">
