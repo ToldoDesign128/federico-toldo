@@ -44,7 +44,7 @@
    <header class="w-full fixed z-50">
       <div class="relative bg-gray-200 dark:bg-gray-800 z-40">
          <div class="flex container mx-auto py-5 px-6 justify-between items-center">
-            <div class="lg:w-3/12 w-auto flex items-center">
+            <div class="lg:w-3/12 w-auto flex items-center lg:order-1 order-2">
                <button id="hamburgerButton" title="Menu Button" class="group py-4 px-[.5rem] mr-2 bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border border-gray-900 dark:border-gray-100 rounded-full">
                   <span class="flex h-px w-8 bg-gray-900 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
                   <span class="flex h-px w-8 mt-3 bg-gray-950 lg:group-hover:bg-gray-100 dark:bg-gray-100 lg:dark:group-hover:bg-gray-900"></span>
@@ -52,10 +52,10 @@
                <p id="menuOpen" class="lg:flex hidden text-gray-900 dark:text-gray-100">Menu</p>
                <p id="menuClose" class="hidden text-gray-900 dark:text-gray-100">Close</p>
             </div>
-            <a href="<?php echo home_url(); ?>" class="lg:w-3/12 w-auto text-center font-semibold text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300">
+            <a href="<?php echo home_url(); ?>" class="lg:w-3/12 w-auto text-center font-semibold text-gray-900 dark:text-gray-100 lg:hover:text-gray-600 dark:lg:hover:text-gray-300 lg:hover:tracking-wide transition-all duration-300 lg:order-2 order-1">
                Federico Toldo <span class="text-[#eb0000] text-xl">*</span>
             </a>
-            <div class="lg:w-3/12 lg:flex justify-end hidden">
+            <div class="lg:w-3/12 lg:flex justify-end hidden order-3">
                <a id="headerCta" href="<?php echo get_permalink(get_page_by_path('contatti'));; ?>" class="w-auto text-gray-900 lg:hover:text-gray-100 dark:text-gray-100 dark:lg:hover:text-gray-900 border bg-transparent lg:hover:bg-gray-900 dark:lg:hover:bg-gray-100 border-gray-900 dark:border-gray-100 rounded py-2 px-5">
                   Contattami
                </a>
