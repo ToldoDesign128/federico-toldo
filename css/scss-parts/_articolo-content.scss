@@ -1,0 +1,45 @@
+.content-articolo {
+  width: 100%;
+  padding-top: 30px;
+
+  @media (min-width: 1024px) {
+    padding-top: 50px;
+  }
+
+  h1 {
+    padding-bottom: 2rem;
+    @media (min-width: 1024px) {
+      padding-bottom: 4rem;
+    }
+  }
+  h2 {
+    padding-bottom: 2rem;
+    @media (min-width: 1024px) {
+      padding-bottom: 3.8rem;
+    }
+  }
+  h3 {
+    padding-bottom: 2rem;
+    @media (min-width: 1024px) {
+      padding-bottom: 3.6rem;
+    }
+  }
+  h4, h5 {
+    padding-bottom: 1.8rem;
+    @media (min-width: 1024px) {
+      padding-bottom: 3.4rem;
+    }
+  }
+  p {
+    padding-bottom: 2rem;
+    @media (min-width: 1024px) {
+      padding-bottom: 3.8rem;
+    }
+  }
+  img {
+    padding-bottom: 1.6rem;
+    @media (min-width: 1024px) {
+      padding-bottom: 4rem;
+    }
+  }
+}

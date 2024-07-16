@@ -25,9 +25,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 // Stile
+@import "/css/scss-parts/archive";
+@import "/css/scss-parts/articolo-content";
 @import "/css/scss-parts/header";
 @import "/css/scss-parts/footer";
-@import "/css/scss-parts/archive";
 @import "/css/scss-parts/link-progetto";
 @import "/css/scss-parts/contact-form";
 @import "/css/scss-parts/loader";

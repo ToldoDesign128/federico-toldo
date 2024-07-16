@@ -7,7 +7,7 @@ while (have_posts()) : the_post();
     $bread_archive_link = get_post_type_archive_link('progetti');
     $bread_archive_label = 'Progetti';
 ?>
-    <main id="singleContainer">
+    <main id="singleContainer" class="overflow-x-clip">
         <!-- Hero progetti -->
         <section class="w-full pt-48">
             <div class="w-full h-full container mx-auto flex flex-col justify-center px-6">
@@ -66,59 +66,118 @@ while (have_posts()) : the_post();
         <!-- Content progetto -->
         <section class="container mx-auto ">
             <div class="lg:w-9/12 w-full flex flex-col px-6">
-                <?php if (has_post_thumbnail()) {
-                    echo get_the_post_thumbnail(null, 'full', ['class' => 'w-full lg:my-14 md:my-12 my-6 aspect-video object-cover rounded']);;
-                } else {
-                    echo '<img class="w-full lg:my-14 md:my-12 my-6 aspect-video object-cover rounded" src="http://federico-toldo-new.local/wp-content/uploads/2023/10/Federico_Toldo.jpeg"/>';
-                }; ?>
-                <!-- Testo Img -->
-                <div class="lg:my-14 md:my-12 my-6">
-                    <div class="flex flex-row flex-wrap justify-between">
-                        <div class="lg:w-6/12 w-full text-gray-900 dark:text-gray-100">
-                            <?php echo get_the_content(); ?>
-                        </div>
-                        <?php if (get_field('immagine_1_progetti')) : ?>
-                            <img class="lg:w-5/12 w-full aspect-video lg:mt-0 md:mt-24 mt-12 object-cover rounded" src="<?php the_field('immagine_1_progetti'); ?>" />
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="lg:my-14 my-6">
-                    <?php if (get_field('immagine_2_progetti')) : ?>
-                        <img class="w-full aspect-video object-cover rounded" src="<?php the_field('immagine_2_progetti'); ?>" />
-                    <?php endif; ?>
+                <!-- Flexible content -->
+                <div class="content-articolo">
+                    <?php
+                    if (have_rows('contenuto_progetto')) :
+                        // Loop through rows.
+                        while (have_rows('contenuto_progetto')) : the_row();
+
+                            if (get_row_layout() == 'titolo_h1') :
+                                $h1 = get_sub_field('h1'); ?>
+
+                                <!-- Blocco H1 -->
+
+                                <h1 class="font-normal w-full lg:text-8xl md:text-7xl text-4xl text-gray-900 dark:text-gray-100"><?php echo esc_html($h1); ?></h1>
+
+                            <?php
+                            elseif (get_row_layout() == 'titolo_h2') :
+                                $h2 = get_sub_field('h2'); ?>
+                                <!-- Blocco H2 -->
+
+                                <h2 class="font-normal w-full lg:text-7xl md:text-6xl text-3xl text-gray-900 dark:text-gray-100"><?php echo esc_html($h2); ?></h2>
+
+
+                            <?php
+                            elseif (get_row_layout() == 'titolo_h3') :
+                                $h3 = get_sub_field('h3'); ?>
+
+                                <!-- Blocco H3 -->
+                                <h3 class="font-normal w-full lg:text-6xl md:text-5xl text-2xl text-gray-900 dark:text-gray-100"><?php echo esc_html($h3); ?></h3>
+
+
+                            <?php
+                            elseif (get_row_layout() == 'titolo_h4') :
+                                $h4 = get_sub_field('h4'); ?>
+
+                                <!-- Blocco H4 -->
+                                <h4 class="font-normal w-full lg:text-5xl md:text-4xl text-xl text-gray-900 dark:text-gray-100"><?php echo esc_html($h4); ?></h4>
+
+
+                            <?php
+                            elseif (get_row_layout() == 'titolo_h5') :
+                                $h4 = get_sub_field('h5'); ?>
+
+                                <!-- Blocco H5 -->
+                                <h5 class="font-normal w-full lg:text-3xl md:text-2xl text-lg text-gray-900 dark:text-gray-100"><?php echo esc_html($h4); ?></h5>
+
+
+                            <?php
+                            elseif (get_row_layout() == 'testo_paragrafo') :
+                                $p = get_sub_field('paragrafo'); ?>
+                                <!-- Blocco Paragrafo -->
+
+                                <p class="w-full text-gray-800 dark:text-gray-300"><?php echo wp_kses_post($p) ?></p>
+
+
+                            <?php
+                            elseif (get_row_layout() == 'testo_doppio_paragrafo') : ?>
+
+                                <!-- Blocco Doppio Paragrafo -->
+                                <div class="flex flex-col flex-nowrap lg:flex-row gap-4">
+                                    <div class="lg:w-2/5 w-full text-gray-700 dark:text-gray-300"><?php the_sub_field('paragrafo_doppio') ?></div>
+                                    <div class="lg:w-2/5 w-full text-gray-700 dark:text-gray-300"><?php the_sub_field('paragrafo_doppio_2') ?></div>
+                                </div>
+
+                                <!-- Blocco Immagine -->
+
+                            <?php
+                            elseif (get_row_layout() == 'immagine') :
+                                $immagine_singola = get_sub_field('immagine'); ?>
+
+                                <img class="" src="<?php echo esc_url($immagine_singola['url']); ?>" alt="<?php echo esc_attr($immagine_singola['alt']); ?>" />
+
+                                <!-- Blocco Immagine Doppia -->
+
+                            <?php
+                            elseif (get_row_layout() == 'immagine_doppia') :
+                                $immagine_1 = get_sub_field('immagine_1');
+                                $immagine_2 = get_sub_field('immagine_2'); ?>
+
+                                <div class="max-w-full flex flex-col flex-nowrap justify-between lg:flex-row">
+                                    <img class="lg:w-[49%] w-full h-full object-cover" src="<?php echo esc_url($immagine_1['url']); ?>" alt="<?php echo esc_attr($immagine_1['alt']); ?>" />
+                                    <img class="lg:w-[49%] w-full h-full object-cover" src="<?php echo esc_url($immagine_2['url']); ?>" alt="<?php echo esc_attr($immagine_2['alt']); ?>" />
+                                </div>
+                                <?php
+                                if (have_rows('scaricabili_field', $page_id)) : ?>
+                                    <div class="">
+                                        <?php
+                                        while (have_rows('scaricabili_field', $page_id)) : the_row();
+
+                                            $file = get_sub_field('scaricabili');
+                                            if ($file) :
+                                                $url = $file['url'];
+                                                $title = $file['title'];
+                                                $caption = $file['caption'];
+                                                $icon = $file['icon'];
+                                        ?>
+                                                <a href="<?php echo esc_attr($url); ?>" title="<?php echo esc_attr($title); ?>">
+                                                    <img src="<?php echo esc_attr($icon); ?>" />
+                                                    <span><?php echo esc_html($title); ?></span>
+                                                </a>
+                                        <?php endif;
+                                        endwhile; ?>
+                                    </div>
+                                <?php
+                                endif; ?>
+
+                    <?php
+                            endif;
+                        endwhile;
+                    endif;
+                    ?>
                 </div>
             </div>
-        </section>
-        <!-- Tecnologie applicate -->
-        <section class="container mx-auto py-6">
-            <h5 class="w-full font-medium lg:text-4xl md:text-3xl text-2xl text-gray-700 dark:text-gray-300 my-6 px-6">
-                Tecnologie utilizzate
-            </h5>
-            <div class="lg:w-9/12 flex flex-row flex-wrap w-full px-6">
-                <?php
-                // Check rows exists.
-                if (have_rows('tecnologie_utilizzate_progetti', $page_id)) :
-
-                    // Loop through rows.
-                    while (have_rows('tecnologie_utilizzate_progetti', $page_id)) : the_row();
-
-                        // Load sub field value.
-                        $sub_value = get_sub_field('link_tecnologie_progetto');
-                        if ($sub_value) :
-                            $sub_value_url = $sub_value['url'];
-                            $sub_value_title = $sub_value['title'];
-                            $sub_value_target = $sub_value['target'] ? $sub_value['target'] : '_self';
-                ?>
-                            <div class="md:w-6/12 w-full">
-                                <a class="flex lg:text-3xl md:text-2xl text-xl text-gray-600 lg:hover:text-gray-900 dark:text-gray-400 dark:lg:hover:text-gray-100 ml-0 lg:hover:ml-4 my-4 transition-all" href="<?php echo esc_url($sub_value_url); ?>" target="<?php echo esc_attr($sub_value_target); ?>"><?php echo esc_html($sub_value_title); ?><img class="ml-2 mt-1 opacity-50 lg:group-hover:opacity-100 transition-all" src="<?php echo get_template_directory_uri() . '/img/icon/mdi_arrow.svg'; ?>" alt="arrow"></a>
-                            </div>
-                <?php
-                        // End loop.
-                        endif;
-                    endwhile;
-                endif; ?>
-            </div>
-
         </section>
         <!-- Progetti Corelati -->
         <section class="container mx-auto py-6">
@@ -153,7 +212,7 @@ while (have_posts()) : the_post();
     <script>
         jQuery(window).scroll(function() {
             var heightScrolled = jQuery(window).scrollTop();
-            var defaultHeight = 1500;
+            var defaultHeight = jQuery(document).height() - 1200;
 
             if (heightScrolled < defaultHeight) {
                 jQuery('.circle-button').removeClass("returTop")
